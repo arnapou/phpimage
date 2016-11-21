@@ -1,6 +1,6 @@
 <fr>
 	Copie une autre image sur l'image courante.<br />
-	Chaque paramètre peut recevoir un entier ou un pourcentage.
+	Chaque paramÃ¨tre peut recevoir un entier ou un pourcentage.
 </fr>
 <en>
 	Copy an other image on the current image.<br />
@@ -20,7 +20,7 @@ $srcx   : source - valeur X
 $srcy   : source - valeur Y
 $srcw   : largeur source
 $srch   : hauteur source
-$alpha  : transparence à appliquer
+$alpha  : transparence Ã  appliquer
 $dstpos : position destination
 $srcpos : position source
 </pre>
@@ -42,12 +42,12 @@ $dstpos : destination position
 $srcpos : source position
 </pre></en>
 	</li><li>
-<fr>Simpe copie sans aucun paramètres.</fr>
+<fr>Simpe copie sans aucun paramÃ¨tres.</fr>
 <en>Simple copy without any parameters.</en>
 <img src="_ELEMENT_1.php" class="right" />
 {CODE _ELEMENT_1.php}
 	</li><li>
-<fr>Copie de l'image entière vers une position donnée.</fr>
+<fr>Copie de l'image entiÃ¨re vers une position donnÃ©e.</fr>
 <en>Copy of the entire image to a precise position.</en>
 <img src="_ELEMENT_2.php" class="right" />
 {CODE _ELEMENT_2.php}
@@ -57,7 +57,7 @@ $srcpos : source position
 <img src="_ELEMENT_3.php" class="right" />
 {CODE _ELEMENT_3.php}
 	</li><li>
-<fr>Copie de la tête de Tux.</fr>
+<fr>Copie de la tÃªte de Tux.</fr>
 <en>Copy of Tux's head.</en>
 <img src="_ELEMENT_4.php" class="right" />
 {CODE _ELEMENT_4.php}

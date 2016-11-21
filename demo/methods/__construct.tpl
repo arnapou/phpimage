@@ -18,18 +18,18 @@ You can create a new PHPImge object by 3 methods :
 
 
 <fr>
-Vous pouvez créer un objet PHPImage par trois méthodes :
+Vous pouvez crÃ©er un objet PHPImage par trois mÃ©thodes :
 <ol>
 	<li>
-		Cette méthode est la plus simple et crée l'objet mais ne crée pas l'espace de dessin.<br />
-		C'est utile si vous voulez changer par exemple la couleur de fond par défaut avant de créer l'espace de dessin.
+		Cette mÃ©thode est la plus simple et crÃ©e l'objet mais ne crÃ©e pas l'espace de dessin.<br />
+		C'est utile si vous voulez changer par exemple la couleur de fond par dÃ©faut avant de crÃ©er l'espace de dessin.
 		<pre>$image = new PHPImage();</pre>
 	</li><li>
-		Cette méthode crée l'objet à partir d'une image existante.<br />
-		Le format de l'image est le même que celui du fichier.
+		Cette mÃ©thode crÃ©e l'objet Ã  partir d'une image existante.<br />
+		Le format de l'image est le mÃªme que celui du fichier.
 		<pre>$image = new PHPImage($mon_fichier_image_existant);</pre>
 	</li><li>
-		Enfin la dernière méthode permet de créer l'objet et son espace de dessin en une seule ligne.
+		Enfin la derniÃ¨re mÃ©thode permet de crÃ©er l'objet et son espace de dessin en une seule ligne.
 		<pre>$image = new PHPImage($largeur, $hauteur);</pre>
 	</li>
 </ol>

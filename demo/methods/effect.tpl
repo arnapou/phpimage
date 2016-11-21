@@ -1,12 +1,12 @@
 <fr>
-	Applique un effet à l'image.
+	Applique un effet Ã  l'image.
 </fr>
 <en>
 	Apply an effect to the image.
 </en>
 <ol>
 <li>
-<fr>Détection de bords.</fr>
+<fr>DÃ©tection de bords.</fr>
 <en>Edge detect.</en>
 <img src="_ELEMENT_1.php" class="right" />
 {CODE _ELEMENT_1.php}
@@ -31,7 +31,7 @@
 <img src="_ELEMENT_5.php" class="right" />
 {CODE _ELEMENT_5.php}
 	</li><li>
-<fr>Flou sélectif.</fr>
+<fr>Flou sÃ©lectif.</fr>
 <en>Selective Blur.</en>
 <img src="_ELEMENT_6.php" class="right" />
 {CODE _ELEMENT_6.php}
@@ -41,7 +41,7 @@
 <img src="_ELEMENT_7.php" class="right" />
 {CODE _ELEMENT_7.php}
 	</li><li>
-<fr>Luminosité.</fr>
+<fr>LuminositÃ©.</fr>
 <en>Brightness.</en>
 <img src="_ELEMENT_8.php" class="right" />
 {CODE _ELEMENT_8.php}
@@ -71,7 +71,7 @@
 <img src="_ELEMENT_13.php" class="right" />
 {CODE _ELEMENT_13.php}
 	</li><li>
-<fr>Sépia.</fr>
+<fr>SÃ©pia.</fr>
 <en>Sepia.</en>
 <img src="_ELEMENT_14.php" class="right" />
 {CODE _ELEMENT_14.php}

@@ -1,5 +1,5 @@
 <fr>
-	Police TTF par défaut pour toutes les méthodes de texte.
+	Police TTF par dÃ©faut pour toutes les mÃ©thodes de texte.
 </fr>
 <en>
 	Default TTF font for all text methods.

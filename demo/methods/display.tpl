@@ -1,7 +1,7 @@
 <fr>
 	Retourne l'image au navigateur. <br />
-	Cette méthode peut aussi enregistrer l'image en même temps qu'elle la renvoie au navigateur.<br />
-	Elle sait aussi gérer un cache et renvoie les headers nécessaires.
+	Cette mÃ©thode peut aussi enregistrer l'image en mÃªme temps qu'elle la renvoie au navigateur.<br />
+	Elle sait aussi gÃ©rer un cache et renvoie les headers nÃ©cessaires.
 </fr>
 <en>
 	Return the image to the browser.<br />
@@ -25,10 +25,10 @@ $image->display('image.png');
 </pre>
 	</li><li>
 <fr>
-Affichage et enregistrement d'une image JPG avec qualité précisée.
+Affichage et enregistrement d'une image JPG avec qualitÃ© prÃ©cisÃ©e.
 <pre>$image = new PHPImage();
 $image->create(200, 100);
-$image->display('image.jpg', 85); // qualité: 0 à 100 (optionel).
+$image->display('image.jpg', 85); // qualitÃ©: 0 Ã  100 (optionel).
 </pre>
 </fr>
 <en>
@@ -41,8 +41,8 @@ $image->display('image.jpg', 85); // quality: 0 to 100 (optional).
 	</li><li>
 <fr>
 	Affichage avec cache automatique.<br />
-	A noter qu'il ne faut pas créer d'espace de dessin avant d'utiliser la méthode display dans la condition du if.<br />
-	En fait si l'image existe déjà et qu'elle est encore valide (moins de 10 minutes), le premier display affiche l'image et retourne true.
+	A noter qu'il ne faut pas crÃ©er d'espace de dessin avant d'utiliser la mÃ©thode display dans la condition du if.<br />
+	En fait si l'image existe dÃ©jÃ  et qu'elle est encore valide (moins de 10 minutes), le premier display affiche l'image et retourne true.
 </fr>
 <en>
 	Display with automatic cache.<br />

@@ -1,5 +1,5 @@
 <fr>
-	Copie une autre image sur l'image courante en la redimensionnant proprement et en gardant les proportions largeur/hauteur (plus rapide que copyresampledfit mais moins bonne qualité).
+	Copie une autre image sur l'image courante en la redimensionnant proprement et en gardant les proportions largeur/hauteur (plus rapide que copyresampledfit mais moins bonne qualitÃ©).
 </fr>
 <en>
 	Copy an other image on the current image and resize it correctly keeping the ratio width/height (faster than copyresampledfit but less quality).
@@ -20,7 +20,7 @@ $dstw   : largeur destination
 $dsth   : hauteur destination
 $srcw   : largeur source
 $srch   : hauteur source
-$alpha  : transparence à appliquer
+$alpha  : transparence Ã  appliquer
 $dstpos : position destination
 $srcpos : position source
 </pre>
@@ -44,12 +44,12 @@ $dstpos : destination position
 $srcpos : source position
 </pre></en>
 	</li><li>
-<fr>Simpe copie sans aucun paramètres.</fr>
+<fr>Simpe copie sans aucun paramÃ¨tres.</fr>
 <en>Simple copy without any parameters.</en>
 <img src="_ELEMENT_1.php" class="right" />
 {CODE _ELEMENT_1.php}
 	</li><li>
-<fr>Hauteur de destination à 50%.</fr>
+<fr>Hauteur de destination Ã  50%.</fr>
 <en>Destination height at 50%.</en>
 <img src="_ELEMENT_2.php" class="right" />
 {CODE _ELEMENT_2.php}

@@ -19,10 +19,10 @@ $srcx       : source - valeur X
 $srcy       : source - valeur Y
 $srcw       : largeur source
 $srch       : hauteur source
-$alpha      : transparence à appliquer
-$dstpos     : position destination (voir la méthode copy pour des exemples)
-$srcpos     : position source (voir la méthode copy pour des exemples)
-$shapestyle : style du rectangle (plusieurs valeurs séparées par des espaces)
+$alpha      : transparence Ã  appliquer
+$dstpos     : position destination (voir la mÃ©thode copy pour des exemples)
+$srcpos     : position source (voir la mÃ©thode copy pour des exemples)
+$shapestyle : style du rectangle (plusieurs valeurs sÃ©parÃ©es par des espaces)
               syntaxe des valeurs: '<corner>(<shape>[%int], width[, height])'
               corner : 'all',
 		               'tl' (top left),
@@ -34,8 +34,8 @@ $shapestyle : style du rectangle (plusieurs valeurs séparées par des espaces)
 			           'curve', 'curve2', 'curve3', 'curve4', 'curve5', 'curve6',
 					   'trait', 'trait2', 'trait3',
 					   'empty', 'none'
-			  int    : espace de hachurage (valeur entière)
-$watermark  : applique un effet watermark à l'image
+			  int    : espace de hachurage (valeur entiÃ¨re)
+$watermark  : applique un effet watermark Ã  l'image
 $creux      : l'effet watermark en creux ou relief
 </pre>
 </fr>

@@ -2,6 +2,7 @@
 <html> 
 <head> 
 <title>PHPImage :: arnapou.net</title>
+<meta charset="UTF-8" />
 <style type="text/css">
 * {
 	font-family: Verdana, Arial;
@@ -158,6 +159,10 @@ ul.menu a {
 }
 ul.menu a:hover {
 	text-decoration: underline;
+}
+ol {
+    list-style: inside decimal;
+    padding-left: 0;
 }
 </style> 
 </head> 

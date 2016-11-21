@@ -12,7 +12,7 @@
 
 $srccolor : couleur source
 $dstcolor : couleur destination
-$keeptransparency : si la transparence originale est gardée
+$keeptransparency : si la transparence originale est gardÃ©e
 </pre>
 </fr>
 <en>

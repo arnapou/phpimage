@@ -1,5 +1,5 @@
 <fr>
-	Retourne les dimensions du texte à dessiner sous forme de tableau à deux éléments.
+	Retourne les dimensions du texte Ã  dessiner sous forme de tableau Ã  deux Ã©lÃ©ments.
 </fr>
 <en>
 	Return text dimensions as 2 elements array.
@@ -10,11 +10,11 @@
 	Syntaxe
 	<pre>gettextbox($text, $fontsize=0, $angle=0, $linespacing='', $font='')
 
-$text        : texte (retours à la ligne autorisés)
+$text        : texte (retours Ã  la ligne autorisÃ©s)
 $fontsize    : taille de police
 $angle       : angle
 $linespacing : interligne
-$font        : police de caractère
+$font        : police de caractÃ¨re
 </pre>
 </fr>
 <en>

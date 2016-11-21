@@ -1,6 +1,6 @@
 <fr>
-	Récupère la position haut gauche (x, y) où dessiner le texte.<br />
-	Cette méthode est surtout utile si vous utilisez un angle différent de 0 et avec des positions différentes de 'top left'.
+	RÃ©cupÃ¨re la position haut gauche (x, y) oÃ¹ dessiner le texte.<br />
+	Cette mÃ©thode est surtout utile si vous utilisez un angle diffÃ©rent de 0 et avec des positions diffÃ©rentes de 'top left'.
 </fr>
 <en>
 	Get the top left position (x, y) where to draw the text.<br />
@@ -15,12 +15,12 @@
 
 $cx          : position X
 $cy          : position Y
-$text        : texte (retours à la ligne autorisés)
+$text        : texte (retours Ã  la ligne autorisÃ©s)
 $fontsize    : taille du texte
 $angle       : angle du texte
-$position    : position des coordonnées d'ancrage du texte
+$position    : position des coordonnÃ©es d'ancrage du texte
 $linespacing : interligne
-$font        : police de caractère
+$font        : police de caractÃ¨re
 </pre>
 </fr>
 <en>

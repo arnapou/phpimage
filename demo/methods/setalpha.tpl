@@ -1,5 +1,5 @@
 <fr>
-	Définit la transparence pour toute l'image
+	DÃ©finit la transparence pour toute l'image
 </fr>
 <en>
 	Set the transparency for the whole image.

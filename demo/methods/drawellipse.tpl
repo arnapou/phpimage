@@ -1,6 +1,6 @@
 <fr>
 	Dessine une ellipse.<br />
-	Si la couleur, l'épaisseur ou le style ne sont pas précisés, cela reprendra automatiquement les dernières valeurs utilisées pour dessiner des lignes.
+	Si la couleur, l'Ã©paisseur ou le style ne sont pas prÃ©cisÃ©s, cela reprendra automatiquement les derniÃ¨res valeurs utilisÃ©es pour dessiner des lignes.
 </fr>
 <en>
 	Draw an ellipse.<br />
@@ -17,7 +17,7 @@ $cy        : y centre
 $w         : largeur
 $h         : hauteur
 $linecolor : couleur de la ligne
-$thickness : épaisseur
+$thickness : Ã©paisseur
 $linestyle : style de la ligne (solid, dot, square, dash, bigdash, double, triple)
 </pre>
 </fr>

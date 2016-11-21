@@ -11,7 +11,7 @@
 <pre>setbackgroundimage(& $src, $alpha=-1)
 
 $src        : image source
-$alpha      : transparence à appliquer
+$alpha      : transparence Ã  appliquer
 </pre>
 </fr>
 <en>

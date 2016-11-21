@@ -1,7 +1,7 @@
 <fr>
 	L'alpha blending est une option permettant la fusion automatique des couleurs et transparence de pixel lors du dessin.<br />
-	S'il est désactivé, le dessin se comporte de manière très simple en écrasant les couleurs existantes (cela est nécessaire lors de certaines opérations de traitement sur les images ou on veut mettre une couleur avec transparence spécifique à un endroit sans fusion avec la couleur déjà présente).<br />
-	Cette option est activée par défaut.
+	S'il est dÃ©sactivÃ©, le dessin se comporte de maniÃ¨re trÃ¨s simple en Ã©crasant les couleurs existantes (cela est nÃ©cessaire lors de certaines opÃ©rations de traitement sur les images ou on veut mettre une couleur avec transparence spÃ©cifique Ã  un endroit sans fusion avec la couleur dÃ©jÃ  prÃ©sente).<br />
+	Cette option est activÃ©e par dÃ©faut.
 </fr>
 <en>
 	Aplhablending is an option which allow an automatic merge of colors and transparency during drawing.<br />

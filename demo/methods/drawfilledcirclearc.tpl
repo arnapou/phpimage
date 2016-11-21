@@ -13,8 +13,8 @@
 $cx    : x center
 $cy    : y center
 $r     : rayon
-$start : angle de départ
-$end   : angle d'arrivée
+$start : angle de dÃ©part
+$end   : angle d'arrivÃ©e
 $color : couleur de remplissage
 </pre>
 </fr>

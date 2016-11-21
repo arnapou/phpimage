@@ -1,5 +1,5 @@
 <fr>
-	Cette méthode efface totalement le dessin en le recréant à vide.
+	Cette mÃ©thode efface totalement le dessin en le recrÃ©ant Ã  vide.
 </fr>
 <en>
 	This method erase the whole image by recreating it.

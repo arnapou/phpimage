@@ -14,8 +14,8 @@ $cx    : x center
 $cy    : y center
 $w     : largeur
 $h     : hauteur
-$start : angle de départ
-$end   : angle d'arrivée
+$start : angle de dÃ©part
+$end   : angle d'arrivÃ©e
 $color : couleur de remplissage
 </pre>
 </fr>

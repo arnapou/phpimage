@@ -1,6 +1,6 @@
 <fr>
 	Dessine une partie de cercle.<br />
-	Si la couleur, l'épaisseur ou le style ne sont pas précisés, cela reprendra automatiquement les dernières valeurs utilisées pour dessiner des lignes.
+	Si la couleur, l'Ã©paisseur ou le style ne sont pas prÃ©cisÃ©s, cela reprendra automatiquement les derniÃ¨res valeurs utilisÃ©es pour dessiner des lignes.
 </fr>
 <en>
 	Draw a circle part.<br />
@@ -16,11 +16,11 @@
 $cx          : x centre
 $cy          : y centre
 $r           : rayon
-$start       : angle de début
+$start       : angle de dÃ©but
 $end         : angle de fin
-$drawborders : dessine la ligne et début et de fin
+$drawborders : dessine la ligne et dÃ©but et de fin
 $linecolor   : couleur de la ligne
-$thickness   : épaisseur
+$thickness   : Ã©paisseur
 $linestyle   : style de la ligne (solid, dot, square, dash, bigdash, double, triple)
 </pre>
 </fr>

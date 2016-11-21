@@ -1,5 +1,5 @@
 <fr>
-	Redimensionne l'image proprement (plus rapide que resample mais moins bonne qualité).
+	Redimensionne l'image proprement (plus rapide que resample mais moins bonne qualitÃ©).
 </fr>
 <en>
 	Resize properly the image (faster than resample but less quality).

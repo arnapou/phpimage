@@ -1,5 +1,5 @@
 <fr>
-	Cette méthode efface le dessin à partir du point indiqué.
+	Cette mÃ©thode efface le dessin Ã  partir du point indiquÃ©.
 </fr>
 <en>
 	This method erase the image from the specified point.

@@ -1,6 +1,6 @@
 <fr>
 	Dessine un rectangle.<br />
-	Si la couleur, l'épaisseur ou le style ne sont pas précisés, cela reprendra automatiquement les dernières valeurs utilisées pour dessiner des lignes.
+	Si la couleur, l'Ã©paisseur ou le style ne sont pas prÃ©cisÃ©s, cela reprendra automatiquement les derniÃ¨res valeurs utilisÃ©es pour dessiner des lignes.
 </fr>
 <en>
 	Draw a rectangle.<br />
@@ -17,9 +17,9 @@ $y1         : y point 1
 $x2         : x point 2
 $y2         : y point 2
 $linecolor  : couleur de la ligne
-$thickness  : épaisseur
+$thickness  : Ã©paisseur
 $linestyle  : style de la ligne
-$shapestyle : style du rectangle (plusieurs valeurs séparées par des espaces)
+$shapestyle : style du rectangle (plusieurs valeurs sÃ©parÃ©es par des espaces)
               syntaxe des valeurs: '<corner>(<shape>, width[, height])'
               corner : 'all',
 		               'tl' (top left),

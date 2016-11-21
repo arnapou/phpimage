@@ -1,5 +1,5 @@
 <fr>
-	Applique un masque de noir et blanc à l'image.<br />
+	Applique un masque de noir et blanc Ã  l'image.<br />
 	Le blanc est transparent, le noir opaque.
 </fr>
 <en>

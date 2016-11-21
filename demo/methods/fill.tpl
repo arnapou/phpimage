@@ -1,5 +1,5 @@
 <fr>
-	Colorie à partir d'un point.
+	Colorie Ã  partir d'un point.
 </fr>
 <en>
 	Colorize from a point.

@@ -1,5 +1,5 @@
 <fr>
-	Définit une couleur pour un pixel donné<br />
+	DÃ©finit une couleur pour un pixel donnÃ©<br />
 </fr>
 <en>
 	Set the color for a defined pixel.<br />

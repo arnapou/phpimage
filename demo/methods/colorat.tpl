@@ -1,5 +1,5 @@
 <fr>
-	Cette méthode retourne un objet PHPImageColor de la couleur à la position donnée.
+	Cette mÃ©thode retourne un objet PHPImageColor de la couleur Ã  la position donnÃ©e.
 </fr>
 <en>
 	This method return a PHPImageColor objet of the specified position color.

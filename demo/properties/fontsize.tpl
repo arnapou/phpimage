@@ -1,5 +1,5 @@
 <fr>
-	Taille de police TTF par défaut pour toutes les méthodes de texte.
+	Taille de police TTF par dÃ©faut pour toutes les mÃ©thodes de texte.
 </fr>
 <en>
 	Default TTF font size for all text methods.

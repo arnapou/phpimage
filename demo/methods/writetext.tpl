@@ -14,14 +14,14 @@
 
 $cx          : position X
 $cy          : position Y
-$text        : texte (retours à la ligne autorisés)
+$text        : texte (retours Ã  la ligne autorisÃ©s)
 $fontsize    : taille du texte
 $angle       : angle du texte
 $color       : couleur du texte
-$style       : style de texte (ombré, souligné etc ...)
-$position    : position des coordonnées d'ancrage du texte
+$style       : style de texte (ombrÃ©, soulignÃ© etc ...)
+$position    : position des coordonnÃ©es d'ancrage du texte
 $linespacing : interligne
-$font        : police de caractère ou n° de police (1 à 5)
+$font        : police de caractÃ¨re ou nÂ° de police (1 Ã  5)
 </pre>
 </fr>
 <en>
@@ -52,8 +52,8 @@ $font        : font file name or font number (1 to 5)
 <img src="_ELEMENT_1.php" class="right" />
 {CODE _ELEMENT_1.php}
 	</li><li>
-<fr>Pareil que précédemment mais avec angle de 30° et couleur rouge.</fr>
-<en>Same as previous but with angle=30° and red color.</en>
+<fr>Pareil que prÃ©cÃ©demment mais avec angle de 30Â° et couleur rouge.</fr>
+<en>Same as previous but with angle=30Â° and red color.</en>
 <img src="_ELEMENT_2.php" class="right" />
 {CODE _ELEMENT_2.php}
 	</li><li>
@@ -62,7 +62,7 @@ $font        : font file name or font number (1 to 5)
 <img src="_ELEMENT_3.php" class="right" />
 {CODE _ELEMENT_3.php}
 	</li><li>
-<fr>Style / Souligné.</fr>
+<fr>Style / SoulignÃ©.</fr>
 <en>Style / Underline.</en>
 <img src="_ELEMENT_4.php" class="right" />
 {CODE _ELEMENT_4.php}
@@ -72,7 +72,7 @@ $font        : font file name or font number (1 to 5)
 <img src="_ELEMENT_5.php" class="right" />
 {CODE _ELEMENT_5.php}
 	</li><li>
-<fr>Style / Varié.</fr>
+<fr>Style / VariÃ©.</fr>
 <en>Style / Misc.</en>
 <img src="_ELEMENT_6.php" class="right" />
 {CODE _ELEMENT_6.php}

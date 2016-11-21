@@ -1,5 +1,5 @@
 <fr>
-	Cette méthode permet de charger une image dans un objet PHPImage.
+	Cette mÃ©thode permet de charger une image dans un objet PHPImage.
 </fr>
 <en>
 	This method allow to load an image in a PHPImage object.

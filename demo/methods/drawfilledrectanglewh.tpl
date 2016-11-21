@@ -1,6 +1,6 @@
 <fr>
 	Dessine un rectangle.<br />
-	Si la couleur de remplissage n'est pas précisée pas précisés, cela reprendra automatiquement la dernière valeur utilisée.
+	Si la couleur de remplissage n'est pas prÃ©cisÃ©e pas prÃ©cisÃ©s, cela reprendra automatiquement la derniÃ¨re valeur utilisÃ©e.
 </fr>
 <en>
 	Draw a rectangle.<br />
@@ -17,7 +17,7 @@ $y1         : y point 1
 $w          : hauteur
 $h          : largeur
 $fillcolor  : couleur de la ligne
-$shapestyle : style du rectangle (plusieurs valeurs séparées par des espaces)
+$shapestyle : style du rectangle (plusieurs valeurs sÃ©parÃ©es par des espaces)
               syntaxe des valeurs: '<corner>(<shape>[%int], width[, height])'
               corner : 'all',
 		               'tl' (top left),
@@ -29,7 +29,7 @@ $shapestyle : style du rectangle (plusieurs valeurs séparées par des espaces)
 			           'curve', 'curve2', 'curve3', 'curve4', 'curve5', 'curve6',
 					   'trait', 'trait2', 'trait3',
 					   'empty', 'none'
-			  int    : espace de hachurage (valeur entière)
+			  int    : espace de hachurage (valeur entiÃ¨re)
 </pre>
 </fr>
 <en>

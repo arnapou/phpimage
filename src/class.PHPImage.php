@@ -4827,7 +4827,7 @@ class PHPImageTools {
 		$class = get_class($img);
 		if($class !== false) {
 			if(property_exists($img, 'img')) {
-				return $img->img; break;
+				return $img->img;
 			}
 		}
 		// switch(get_class($img)) {

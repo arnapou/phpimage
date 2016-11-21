@@ -1,5 +1,5 @@
 <fr>
-	Redimensionne l'image proprement en gardand les proportions largeur/hauteur (plus rapide que resamplefit mais moins bonne qualité).
+	Redimensionne l'image proprement en gardand les proportions largeur/hauteur (plus rapide que resamplefit mais moins bonne qualitÃ©).
 </fr>
 <en>
 	Resize properly the image keeping the ratio width/height (faster than resamplefit but less quality).

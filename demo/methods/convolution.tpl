@@ -1,7 +1,7 @@
 <fr>
 	Applique une matrice de convolution sur l'image.<br />
-	La matrice peut être 3x3, 5x5 ou 7x7.<br />
-	Attention, cela peut être très consommateur de CPU.
+	La matrice peut Ãªtre 3x3, 5x5 ou 7x7.<br />
+	Attention, cela peut Ãªtre trÃ¨s consommateur de CPU.
 </fr>
 <en>
 	Apply a convolution matrix on the image.<br />
@@ -14,9 +14,9 @@
 	Syntaxe
 	<pre>$image->convolution($matrix, $offset=0, $usealpha=false);
 
-$matrix   : tableau de valeurs ou bien valeurs séparées par des espaces
+$matrix   : tableau de valeurs ou bien valeurs sÃ©parÃ©es par des espaces
 $offset   : offset pour toutes les couleurs
-$usealpha : mettre à true pour utiliser la matrice sur la transparence
+$usealpha : mettre Ã  true pour utiliser la matrice sur la transparence
 </pre>
 </fr>
 <en>
@@ -33,12 +33,12 @@ $usealpha : set to true to use the matrix on transparency
 <img src="_ELEMENT_1.php" class="right" />
 {CODE _ELEMENT_1.php}
 	</li><li>
-<fr>Pareil que précédemment mais avec flou sur la transparence.</fr>
+<fr>Pareil que prÃ©cÃ©demment mais avec flou sur la transparence.</fr>
 <en>Same as previous but with blur on transparency.</en>
 <img src="_ELEMENT_2.php" class="right" />
 {CODE _ELEMENT_2.php}
 	</li><li>
-<fr>Pareil que précédemment mais avec offset décalé et matrice passée sous forme de tableau.</fr>
+<fr>Pareil que prÃ©cÃ©demment mais avec offset dÃ©calÃ© et matrice passÃ©e sous forme de tableau.</fr>
 <en>Same as previous but with offset set.</en>
 <img src="_ELEMENT_3.php" class="right" />
 {CODE _ELEMENT_3.php}

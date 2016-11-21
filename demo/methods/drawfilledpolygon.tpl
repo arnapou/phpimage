@@ -10,7 +10,7 @@
 	Syntaxe
 <pre>drawfilledpolygon($values, $fillcolor='')
  
-$values    : tableau de coordonnées
+$values    : tableau de coordonnÃ©es
 $fillcolor : couleur de remplissage
 </pre>
 </fr>

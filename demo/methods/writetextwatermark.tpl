@@ -14,14 +14,14 @@
 
 $cx          : position X
 $cy          : position Y
-$text        : texte (retours à la ligne autorisés)
+$text        : texte (retours Ã  la ligne autorisÃ©s)
 $fontsize    : taille du texte
 $angle       : angle du texte
 $creux       : texte en relief ou en creux
-$style       : style de texte (ombré, souligné etc ...)
-$position    : position des coordonnées d'ancrage du texte
+$style       : style de texte (ombrÃ©, soulignÃ© etc ...)
+$position    : position des coordonnÃ©es d'ancrage du texte
 $linespacing : interligne
-$font        : police de caractère ou n° de police (1 à 5)
+$font        : police de caractÃ¨re ou nÂ° de police (1 Ã  5)
 $alpha       : transparence
 </pre>
 </fr>

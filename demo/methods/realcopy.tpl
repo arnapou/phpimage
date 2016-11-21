@@ -1,9 +1,9 @@
 <fr>
 	C'est une fonction de copie qui fusionne corectement les valeurs alpha des couleurs.<br />
-	En effet, avec des transparences élevées, la simple copie ne rend pas les couleurs vraies.<br />
-	Attention, cette méthode est consommatrice de CPU, donc éviter les grosse images, ou alors gérez un cache.<br/>
-	Dans tous les cas, si vous n'usez pas de transparence, n'utilisez pas la copie réelle !<br />
-	Utilisez la propriété <a href="?page=properties#realcopy">realcopy</a> pour que les copies (copy, copyresize...) utilisent cette méthode.
+	En effet, avec des transparences Ã©levÃ©es, la simple copie ne rend pas les couleurs vraies.<br />
+	Attention, cette mÃ©thode est consommatrice de CPU, donc Ã©viter les grosse images, ou alors gÃ©rez un cache.<br/>
+	Dans tous les cas, si vous n'usez pas de transparence, n'utilisez pas la copie rÃ©elle !<br />
+	Utilisez la propriÃ©tÃ© <a href="?page=properties#realcopy">realcopy</a> pour que les copies (copy, copyresize...) utilisent cette mÃ©thode.
 </fr>
 <en>
 	This is copy method which merge correctly the alpha value of colors.<br />
@@ -26,7 +26,7 @@ $srcx   : source - valeur X
 $srcy   : source - valeur Y
 $srcw   : largeur source
 $srch   : hauteur source
-$alpha  : transparence à appliquer
+$alpha  : transparence Ã  appliquer
 $dstpos : position destination
 $srcpos : position source
 </pre>
@@ -48,14 +48,14 @@ $dstpos : destination position
 $srcpos : source position
 </pre></en>
 	</li><li>
-<fr>Copie réelle avec un fond jaune transparent.</fr>
+<fr>Copie rÃ©elle avec un fond jaune transparent.</fr>
 <en>Real copy with a transparent yellow background</en>
 <img src="_ELEMENT_1.php" class="right" />
 {CODE _ELEMENT_1.php}
 	</li><li>
 <fr>
 	Copie GD avec un fond jaune transparent.<br/>
-	Observez la différence... les couleurs ne sont pas correctement fusionnées !
+	Observez la diffÃ©rence... les couleurs ne sont pas correctement fusionnÃ©es !
 </fr>
 <en>
 	GD copy with a transparent yellow background<br/>

@@ -10,9 +10,9 @@
 	Syntaxe
 <pre>drawpolygon($values, $linecolor='', $thickness=0, $linestyle='')
  
-$values    : tableau de coordonnées
+$values    : tableau de coordonnÃ©es
 $linecolor : couleur de la ligne
-$thickness : épaisseur
+$thickness : Ã©paisseur
 $linestyle : style de la ligne (solid, dot, square, dash, bigdash, double, triple)
 </pre>
 </fr>

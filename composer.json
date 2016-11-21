@@ -1,0 +1,17 @@
+{
+    "name": "arnapou/phpimage",
+	"description": "Arnapou PHPImage",
+	"authors": [
+		{
+			"name": "Arnaud Buathier",
+			"email": "arnaud@arnapou.net",
+			"homepage": "http://arnapou.net"
+		}
+	],
+    "require": {
+        "php": ">=5.5"
+    },
+    "autoload": {
+		"files": ["src/class.PHPImage.php"]
+    }
+}

@@ -1,5 +1,5 @@
 <fr>
-	Qualité d'image (que pour JPG).
+	QualitÃ© d'image (que pour JPG).
 </fr>
 <en>
 	Image quality (only for JPG).
