@@ -12,6 +12,8 @@
         "php": ">=5.5"
     },
     "autoload": {
-		"files": ["src/class.PHPImage.php"]
+		"psr-4": {
+			"Arnapou\\PHPImage\\": "src/"
+		}
     }
 }
