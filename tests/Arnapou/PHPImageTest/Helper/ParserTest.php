@@ -11,23 +11,21 @@
 
 namespace Arnapou\PHPImageTest\Helper;
 
-use Arnapou\PHPImage\Exception\InvalidNamedColorException;
 use Arnapou\PHPImage\Exception\InvalidPositionException;
 use Arnapou\PHPImage\Exception\InvalidRelativeValueException;
 use Arnapou\PHPImage\Helper\HelperTrait;
-use Arnapou\PHPImage\Helper\NamedColors;
-use PHPUnit\Framework\TestCase;
+use Arnapou\PHPImageTest\TestCase;
 
+/**
+ * @coversDefaultClass Arnapou\PHPImage\Helper\Parser
+ */
 class ParserTest extends TestCase
 {
     use HelperTrait;
 
-    public function testParseInvalidNamedColor()
-    {
-        $this->expectException(InvalidNamedColorException::class);
-        NamedColors::get('invalid_color');
-    }
-
+    /**
+     * @covers ::parseColor
+     */
     public function testParseValidColor()
     {
         // hex syntax
@@ -75,12 +73,18 @@ class ParserTest extends TestCase
         );
     }
 
+    /**
+     * @covers ::parseRelativeValue
+     */
     public function testParseInvalidRelativeValue()
     {
         $this->expectException(InvalidRelativeValueException::class);
         $this->parser()->parseRelativeValue('stupid_input');
     }
 
+    /**
+     * @covers ::parseRelativeValue
+     */
     public function testParseValidRelativeValue()
     {
         // numeric
@@ -121,12 +125,18 @@ class ParserTest extends TestCase
         );
     }
 
+    /**
+     * @covers ::parsePosition
+     */
     public function testParseInvalidPosition()
     {
         $this->expectException(InvalidPositionException::class);
         $this->parser()->parsePosition('left right');
     }
 
+    /**
+     * @covers ::parsePosition
+     */
     public function testParseValidPosition()
     {
         // percent

@@ -3,9 +3,10 @@
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/6.2/phpunit.xsd"
          bootstrap="bootstrap.php"
          forceCoversAnnotation="true"
-         beStrictAboutCoversAnnotation="true"
+         beStrictAboutCoversAnnotation="false"
          beStrictAboutOutputDuringTests="true"
          beStrictAboutTodoAnnotatedTests="true"
+         convertWarningsToExceptions="false"
          verbose="true">
     <testsuite>
         <directory>.</directory>
@@ -13,7 +14,13 @@
 
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">src</directory>
+            <directory suffix=".php">../src</directory>
+            <exclude>
+                <file>../src/autoload.php</file>
+            </exclude>
         </whitelist>
+        <blacklist>
+            <directory suffix=".php">../vendor</directory>
+        </blacklist>
     </filter>
 </phpunit>

@@ -18,6 +18,7 @@ class GD
      * @param            $w
      * @param            $h
      * @param array|null $bgColor RGB or RGBA array of int
+     *                            alpha is 0 for transparent and 127 for opaque
      * @return resource
      * @throws InvalidArgumentException
      */
@@ -49,7 +50,7 @@ class GD
 
     /**
      * @param resource $image
-     * @param int      $alpha
+     * @param int      $alpha 0 for transparent and 127 for opaque
      * @param bool     $overwriteTransparentPixels
      */
     public function setAlpha($image, $alpha, $overwriteTransparentPixels = false)
@@ -65,7 +66,7 @@ class GD
                     $R = ($val >> 16) & 0xFF;
                     $G = ($val >> 8) & 0xFF;
                     $B = $val & 0xFF;
-                    $color = \imagecolorallocatealpha($image, $R, $G, $B, $alpha);
+                    $color = \imagecolorallocatealpha($image, $R, $G, $B, 127 - $alpha);
                     \imagesetpixel($image, $x, $y, $color);
                 }
             }
@@ -82,7 +83,7 @@ class GD
      * @param      $srcy
      * @param      $srcw
      * @param      $srch
-     * @param null $forcedTransparency
+     * @param null $forcedTransparency 0 for transparent and 127 for opaque
      */
     public function realCopy($dst, $src, $dstx, $dsty, $srcx, $srcy, $srcw, $srch, $forcedTransparency = null)
     {
@@ -107,7 +108,7 @@ class GD
                 if ($Asrc != 127) {
                     if ($x + $dstx < $dsth && $x + $dstx >= 0 && $y + $dsty < $dstw && $y + $dsty >= 0) {
                         if ($forcedTransparency !== null) {
-                            $A = $forcedTransparency;
+                            $A = 127 - $forcedTransparency;
                         } else {
                             $Adst = \imagecolorat($dst, $x + $dstx, $y + $dsty) >> 24;
                             $A = $Adst + $Asrc - 127;

@@ -10,6 +10,9 @@
 
 namespace Arnapou\PHPImage\Helper;
 
+/**
+ * @codeCoverageIgnore
+ */
 trait HelperTrait
 {
     /**

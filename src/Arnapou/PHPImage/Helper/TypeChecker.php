@@ -13,6 +13,8 @@ namespace Arnapou\PHPImage\Helper;
 use Arnapou\PHPImage\Component\Color;
 use Arnapou\PHPImage\Component\Point;
 use Arnapou\PHPImage\Component\Size;
+use Arnapou\PHPImage\Exception\InvalidAlphaException;
+use Arnapou\PHPImage\Exception\InvalidFloatException;
 use Arnapou\PHPImage\Exception\InvalidImageResourceException;
 use Arnapou\PHPImage\Exception\OutOfBoundsException;
 use Arnapou\PHPImage\Exception\InvalidIntegerException;
@@ -64,28 +66,36 @@ class TypeChecker
 
     /**
      * @param string $value
+     * @return resource
      * @throws InvalidImageResourceException
-     * @internal param int $min
-     * @internal param int $max
      */
-    public function checkResource(& $value)
+    public function checkResource($value)
     {
         if ($value instanceof Image) {
-            $value = $value->getResource();
-        } elseif (!\is_resource($value) && !\is_string(\get_resource_type($value))) {
-            throw new InvalidImageResourceException();
+            return $value->getResource();
+        } elseif (\is_resource($value) && \get_resource_type($value) === 'gd') {
+            return $value;
         }
+        throw new InvalidImageResourceException();
     }
 
     /**
      * @param string $value
+     * @throws InvalidAlphaException
      */
     public function checkAlpha(&$value)
     {
         if ($value === null) {
             $value = Color::MAX_ALPHA;
+        } elseif (is_numeric($value)) {
+            $value = intval($value);
+            $this->checkInteger($value, 0, Color::MAX_ALPHA);
+        } elseif (preg_match('/^\s*([0-9]+(\.[0-9]+)?)%\s*$/si', (string)$value, $m)) {
+            $value = round(floatval($m[1]) * Color::MAX_ALPHA / 100);
+            $this->checkInteger($value, 0, Color::MAX_ALPHA);
+        } else {
+            throw new InvalidAlphaException("value should be a correct numeric value");
         }
-        $this->checkInteger($value, 0, Color::MAX_ALPHA);
     }
 
     /**
@@ -126,7 +136,7 @@ class TypeChecker
      * @param string $value
      * @param null   $min
      * @param null   $max
-     * @throws NotFloatException
+     * @throws InvalidFloatException
      * @throws OutOfBoundsException
      */
     public function checkFloat(&$value, $min = null, $max = null)
@@ -141,7 +151,7 @@ class TypeChecker
                 throw new OutOfBoundsException("value should be <= $max");
             }
         } else {
-            throw new NotFloatException("value should be a correct numeric value");
+            throw new InvalidFloatException("value should be a correct numeric value");
         }
     }
 

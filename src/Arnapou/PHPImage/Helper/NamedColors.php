@@ -458,6 +458,7 @@ class NamedColors
 
     /**
      * NamedColors constructor.
+     * @codeCoverageIgnore
      */
     private function __construct()
     {

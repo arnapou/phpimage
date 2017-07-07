@@ -1,0 +1,18 @@
+
+
+Code Coverage Report:       
+  2017-07-07 18:41:04       
+                            
+ Summary:                   
+  Classes: 20.00% (3/15)    
+  Methods:  7.61% (15/197)  
+  Lines:    4.66% (178/3816)
+
+\Arnapou\PHPImage\Helper::GD
+  Methods:  66.67% ( 2/ 3)   Lines:  96.67% ( 58/ 60)
+\Arnapou\PHPImage\Helper::NamedColors
+  Methods: 100.00% ( 3/ 3)   Lines: 100.00% (  5/  5)
+\Arnapou\PHPImage\Helper::Parser
+  Methods: 100.00% ( 3/ 3)   Lines: 100.00% ( 64/ 64)
+\Arnapou\PHPImage\Helper::TypeChecker
+  Methods: 100.00% ( 7/ 7)   Lines: 100.00% ( 51/ 51)

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/perso/phpimage/src</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href=".css/bootstrap.min.css" rel="stylesheet">
+  <link href=".css/nv.d3.min.css" rel="stylesheet">
+  <link href=".css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src=".js/html5shiv.min.js"></script>
+  <script src=".js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="index.html">/var/www/perso/phpimage/src</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#15">Color</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Point.php.html#16">Point</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Position.php.html#16">Position</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/RelativeValue.php.html#15">RelativeValue</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Size.php.html#16">Size</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#18">Image</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#15">PHPImageException</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#95">PHPImage</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old2.php.html#6">PHPImageTTFBox</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#6">PHPImageTools</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old4.php.html#232">PHPImageColor</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="old1.php.html#95">PHPImage</a></td><td class="text-right">703082</td></tr>
+       <tr><td><a href="old3.php.html#6">PHPImageTools</a></td><td class="text-right">80372</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#18">Image</a></td><td class="text-right">756</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#15">Color</a></td><td class="text-right">600</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Point.php.html#16">Point</a></td><td class="text-right">240</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Position.php.html#16">Position</a></td><td class="text-right">240</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Size.php.html#16">Size</a></td><td class="text-right">240</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/RelativeValue.php.html#15">RelativeValue</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="old2.php.html#6">PHPImageTTFBox</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="old4.php.html#232">PHPImageColor</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="old1.php.html#15">PHPImageException</a></td><td class="text-right">30</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#30"><abbr title="Color::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3772"><abbr title="PHPImage::rotate">rotate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3568"><abbr title="PHPImage::realcopy">realcopy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3639"><abbr title="PHPImage::getclone">getclone</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3651"><abbr title="PHPImage::clonepropertiesfrom">clonepropertiesfrom</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3666"><abbr title="PHPImage::resamplefit">resamplefit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3677"><abbr title="PHPImage::resample">resample</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3710"><abbr title="PHPImage::resizefit">resizefit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3721"><abbr title="PHPImage::resize">resize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3753"><abbr title="PHPImage::setresource">setresource</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3809"><abbr title="PHPImage::gettextposition">gettextposition</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3485"><abbr title="PHPImage::copyresized">copyresized</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3848"><abbr title="PHPImage::gettextbox">gettextbox</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3891"><abbr title="PHPImage::writetextwatermark">writetextwatermark</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3938"><abbr title="PHPImage::imagetext">imagetext</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3972"><abbr title="PHPImage::writetext">writetext</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old2.php.html#64"><abbr title="PHPImageTTFBox::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#12"><abbr title="PHPImageTools::linestylenames">linestylenames</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#21"><abbr title="PHPImageTools::shapestylenames">shapestylenames</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#39"><abbr title="PHPImageTools::imagerotation">imagerotation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3526"><abbr title="PHPImage::copy">copy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3441"><abbr title="PHPImage::copyresampled">copyresampled</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#355"><abbr title="PHPImageTools::imageellipsearc_points">imageellipsearc_points</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3084"><abbr title="PHPImage::savealpha">savealpha</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#2980"><abbr title="PHPImage::maketransparent">maketransparent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#2991"><abbr title="PHPImage::fill">fill</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3002"><abbr title="PHPImage::alphablending">alphablending</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3011"><abbr title="PHPImage::antialias">antialias</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3021"><abbr title="PHPImage::colorallocate">colorallocate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3040"><abbr title="PHPImage::getnewcolor">getnewcolor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3059"><abbr title="PHPImage::colorat">colorat</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3075"><abbr title="PHPImage::setpixel">setpixel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3095"><abbr title="PHPImage::savetofile">savetofile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3396"><abbr title="PHPImage::copyresizedfit">copyresizedfit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3130"><abbr title="PHPImage::cacheok">cacheok</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3147"><abbr title="PHPImage::headers">headers</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3206"><abbr title="PHPImage::display">display</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3255"><abbr title="PHPImage::loadfromfile">loadfromfile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3292"><abbr title="PHPImage::cleanat">cleanat</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3300"><abbr title="PHPImage::cleanall">cleanall</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3315"><abbr title="PHPImage::cleanrectangle">cleanrectangle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3328"><abbr title="PHPImage::cleanrectanglewh">cleanrectanglewh</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#3351"><abbr title="PHPImage::copyresampledfit">copyresampledfit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#137"><abbr title="PHPImageTools::imagefilledpolygon">imagefilledpolygon</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#465"><abbr title="PHPImageTools::writetext_style_shadow">writetext_style_shadow</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#2943"><abbr title="PHPImage::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1448"><abbr title="PHPImageTools::rad2deg">rad2deg</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1312"><abbr title="PHPImageTools::imagewidth">imagewidth</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1326"><abbr title="PHPImageTools::setangle360">setangle360</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1356"><abbr title="PHPImageTools::getimageresource">getimageresource</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1377"><abbr title="PHPImageTools::readfile">readfile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1391"><abbr title="PHPImageTools::getfileext">getfileext</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1407"><abbr title="PHPImageTools::getlinestylelist">getlinestylelist</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1428"><abbr title="PHPImageTools::linelength">linelength</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1438"><abbr title="PHPImageTools::deg2rad">deg2rad</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1461"><abbr title="PHPImageTools::rotatepoint">rotatepoint</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1280"><abbr title="PHPImageTools::resizefit">resizefit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1478"><abbr title="PHPImageTools::quadran">quadran</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1515"><abbr title="PHPImageTools::lineangle">lineangle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1540"><abbr title="PHPImageTools::ellipseperimeter">ellipseperimeter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1550"><abbr title="PHPImageTools::switchvar">switchvar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old4.php.html#263"><abbr title="PHPImageColor::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old4.php.html#272"><abbr title="PHPImageColor::getHTML">getHTML</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old4.php.html#281"><abbr title="PHPImageColor::invert">invert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old4.php.html#294"><abbr title="PHPImageColor::getvalues">getvalues</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old4.php.html#302"><abbr title="PHPImageColor::togray">togray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1298"><abbr title="PHPImageTools::imageheight">imageheight</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1264"><abbr title="PHPImageTools::imagesize">imagesize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#510"><abbr title="PHPImageTools::writetext_style_underline">writetext_style_underline</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#945"><abbr title="PHPImageTools::checklinestyle">checklinestyle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#545"><abbr title="PHPImageTools::writetext_style">writetext_style</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#578"><abbr title="PHPImageTools::writetext_init">writetext_init</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#679"><abbr title="PHPImageTools::imageellipsearc">imageellipsearc</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#734"><abbr title="PHPImageTools::imageellipse">imageellipse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#775"><abbr title="PHPImageTools::imageline">imageline</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#824"><abbr title="PHPImageTools::checkshapestyle">checkshapestyle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#891"><abbr title="PHPImageTools::getn1n2">getn1n2</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#933"><abbr title="PHPImageTools::gete1e2">gete1e2</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#991"><abbr title="PHPImageTools::checkparams">checkparams</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1245"><abbr title="PHPImageTools::checksize">checksize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1031"><abbr title="PHPImageTools::checkresource">checkresource</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1044"><abbr title="PHPImageTools::checkmatrix">checkmatrix</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1076"><abbr title="PHPImageTools::checkcreated">checkcreated</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1089"><abbr title="PHPImageTools::checkfile">checkfile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1105"><abbr title="PHPImageTools::checkfont">checkfont</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1125"><abbr title="PHPImageTools::createfolder">createfolder</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1143"><abbr title="PHPImageTools::createfolderpath">createfolderpath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1162"><abbr title="PHPImageTools::checkbool">checkbool</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old3.php.html#1181"><abbr title="PHPImageTools::checkposition">checkposition</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#2963"><abbr title="PHPImage::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#2661"><abbr title="PHPImage::effect">effect</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#40"><abbr title="Color::desaturate">desaturate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Position.php.html#86"><abbr title="Position::isPercentY">isPercentY</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Point.php.html#95"><abbr title="Point::setPoint">setPoint</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Point.php.html#117"><abbr title="Point::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Position.php.html#32"><abbr title="Position::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Position.php.html#45"><abbr title="Position::getX">getX</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Position.php.html#53"><abbr title="Position::setX">setX</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Position.php.html#62"><abbr title="Position::getY">getY</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Position.php.html#70"><abbr title="Position::setY">setY</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Position.php.html#78"><abbr title="Position::isPercentX">isPercentX</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Position.php.html#95"><abbr title="Position::setPoint">setPoint</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Point.php.html#78"><abbr title="Point::isPercentX">isPercentX</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Position.php.html#117"><abbr title="Position::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/RelativeValue.php.html#31"><abbr title="RelativeValue::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/RelativeValue.php.html#42"><abbr title="RelativeValue::get">get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/RelativeValue.php.html#53"><abbr title="RelativeValue::set">set</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/RelativeValue.php.html#63"><abbr title="RelativeValue::isPercent">isPercent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/RelativeValue.php.html#71"><abbr title="RelativeValue::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Size.php.html#32"><abbr title="Size::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Size.php.html#45"><abbr title="Size::getW">getW</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Point.php.html#86"><abbr title="Point::isPercentY">isPercentY</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Point.php.html#70"><abbr title="Point::setY">setY</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Size.php.html#62"><abbr title="Size::getH">getH</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#122"><abbr title="Color::getAlpha">getAlpha</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#50"><abbr title="Color::invert">invert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#62"><abbr title="Color::setRed">setRed</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#71"><abbr title="Color::setGreen">setGreen</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#80"><abbr title="Color::setBlue">setBlue</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#89"><abbr title="Color::setAlpha">setAlpha</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#98"><abbr title="Color::getGreen">getGreen</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#106"><abbr title="Color::getRed">getRed</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#114"><abbr title="Color::getBlue">getBlue</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#130"><abbr title="Color::getTransparency">getTransparency</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Point.php.html#62"><abbr title="Point::getY">getY</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#138"><abbr title="Color::isTransparent">isTransparent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#146"><abbr title="Color::isOpaque">isOpaque</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#154"><abbr title="Color::setColor">setColor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#178"><abbr title="Color::toArray">toArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#186"><abbr title="Color::toHex">toHex</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#194"><abbr title="Color::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Point.php.html#32"><abbr title="Point::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Point.php.html#45"><abbr title="Point::getX">getX</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Point.php.html#53"><abbr title="Point::setX">setX</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Size.php.html#53"><abbr title="Size::setW">setW</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Size.php.html#70"><abbr title="Size::setH">setH</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#2483"><abbr title="PHPImage::convolution">convolution</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#1910"><abbr title="PHPImage::setbackgroundimage">setbackgroundimage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#402"><abbr title="PHPImage::drawfilledpolygon">drawfilledpolygon</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#425"><abbr title="PHPImage::drawline">drawline</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#569"><abbr title="PHPImage::drawrectanglewh">drawrectanglewh</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#608"><abbr title="PHPImage::drawfilledrectanglewh">drawfilledrectanglewh</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#636"><abbr title="PHPImage::drawfilledrectangle">drawfilledrectangle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#872"><abbr title="PHPImage::drawrectangle">drawrectangle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#1146"><abbr title="PHPImage::drawfilledcorner">drawfilledcorner</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#1601"><abbr title="PHPImage::drawcorner">drawcorner</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#1940"><abbr title="PHPImage::drawimage">drawimage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#323"><abbr title="PHPImage::drawlinewh">drawlinewh</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#1994"><abbr title="PHPImage::drawarc">drawarc</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#2036"><abbr title="PHPImage::drawellipsearc">drawellipsearc</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#2151"><abbr title="PHPImage::drawcircle">drawcircle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#2187"><abbr title="PHPImage::drawellipse">drawellipse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#2275"><abbr title="PHPImage::drawfilledcircle">drawfilledcircle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#2297"><abbr title="PHPImage::drawfilledellipse">drawfilledellipse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#2359"><abbr title="PHPImage::replacecoloralpha">replacecoloralpha</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#2406"><abbr title="PHPImage::replacecolor">replacecolor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#2451"><abbr title="PHPImage::mask">mask</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#359"><abbr title="PHPImage::drawpolygon">drawpolygon</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#264"><abbr title="PHPImage::drawfilledellipsearc">drawfilledellipsearc</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Size.php.html#78"><abbr title="Size::isPercentW">isPercentW</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#109"><abbr title="Image::clear">clear</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Size.php.html#86"><abbr title="Size::isPercentH">isPercentH</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Size.php.html#95"><abbr title="Size::setSize">setSize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Size.php.html#117"><abbr title="Size::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#57"><abbr title="Image::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#74"><abbr title="Image::__destruct">__destruct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#85"><abbr title="Image::getResource">getResource</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#93"><abbr title="Image::getWidth">getWidth</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#101"><abbr title="Image::getHeight">getHeight</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#118"><abbr title="Image::copy">copy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#237"><abbr title="PHPImage::drawfilledcirclearc">drawfilledcirclearc</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#171"><abbr title="Image::fill">fill</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#181"><abbr title="Image::setPixel">setPixel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#191"><abbr title="Image::gdColor">gdColor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#213"><abbr title="Image::fileTypeFromFilename">fileTypeFromFilename</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#232"><abbr title="Image::createFromFile">createFromFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#22"><abbr title="PHPImageException::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#30"><abbr title="PHPImageException::display_image">display_image</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#188"><abbr title="PHPImage::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old1.php.html#204"><abbr title="PHPImage::maskalpha">maskalpha</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="old4.php.html#312"><abbr title="PHPImageColor::setcolor">setcolor</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="old1.php.html#1146"><abbr title="PHPImage::drawfilledcorner">drawfilledcorner</abbr></a></td><td class="text-right">23256</td></tr>
+       <tr><td><a href="old1.php.html#1601"><abbr title="PHPImage::drawcorner">drawcorner</abbr></a></td><td class="text-right">11556</td></tr>
+       <tr><td><a href="old1.php.html#2661"><abbr title="PHPImage::effect">effect</abbr></a></td><td class="text-right">8742</td></tr>
+       <tr><td><a href="old1.php.html#636"><abbr title="PHPImage::drawfilledrectangle">drawfilledrectangle</abbr></a></td><td class="text-right">3540</td></tr>
+       <tr><td><a href="old1.php.html#872"><abbr title="PHPImage::drawrectangle">drawrectangle</abbr></a></td><td class="text-right">3540</td></tr>
+       <tr><td><a href="old1.php.html#2483"><abbr title="PHPImage::convolution">convolution</abbr></a></td><td class="text-right">2162</td></tr>
+       <tr><td><a href="old3.php.html#137"><abbr title="PHPImageTools::imagefilledpolygon">imagefilledpolygon</abbr></a></td><td class="text-right">2162</td></tr>
+       <tr><td><a href="old1.php.html#425"><abbr title="PHPImage::drawline">drawline</abbr></a></td><td class="text-right">870</td></tr>
+       <tr><td><a href="old1.php.html#3972"><abbr title="PHPImage::writetext">writetext</abbr></a></td><td class="text-right">600</td></tr>
+       <tr><td><a href="old3.php.html#578"><abbr title="PHPImageTools::writetext_init">writetext_init</abbr></a></td><td class="text-right">420</td></tr>
+       <tr><td><a href="old1.php.html#3568"><abbr title="PHPImage::realcopy">realcopy</abbr></a></td><td class="text-right">420</td></tr>
+       <tr><td><a href="old3.php.html#355"><abbr title="PHPImageTools::imageellipsearc_points">imageellipsearc_points</abbr></a></td><td class="text-right">380</td></tr>
+       <tr><td><a href="old1.php.html#2036"><abbr title="PHPImage::drawellipsearc">drawellipsearc</abbr></a></td><td class="text-right">342</td></tr>
+       <tr><td><a href="old3.php.html#1181"><abbr title="PHPImageTools::checkposition">checkposition</abbr></a></td><td class="text-right">342</td></tr>
+       <tr><td><a href="old1.php.html#2187"><abbr title="PHPImage::drawellipse">drawellipse</abbr></a></td><td class="text-right">272</td></tr>
+       <tr><td><a href="old3.php.html#39"><abbr title="PHPImageTools::imagerotation">imagerotation</abbr></a></td><td class="text-right">240</td></tr>
+       <tr><td><a href="old1.php.html#2359"><abbr title="PHPImage::replacecoloralpha">replacecoloralpha</abbr></a></td><td class="text-right">210</td></tr>
+       <tr><td><a href="old3.php.html#824"><abbr title="PHPImageTools::checkshapestyle">checkshapestyle</abbr></a></td><td class="text-right">210</td></tr>
+       <tr><td><a href="old1.php.html#3147"><abbr title="PHPImage::headers">headers</abbr></a></td><td class="text-right">210</td></tr>
+       <tr><td><a href="old1.php.html#2406"><abbr title="PHPImage::replacecolor">replacecolor</abbr></a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="old1.php.html#3206"><abbr title="PHPImage::display">display</abbr></a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="old3.php.html#945"><abbr title="PHPImageTools::checklinestyle">checklinestyle</abbr></a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="old1.php.html#3095"><abbr title="PHPImage::savetofile">savetofile</abbr></a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="old3.php.html#465"><abbr title="PHPImageTools::writetext_style_shadow">writetext_style_shadow</abbr></a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="old3.php.html#1044"><abbr title="PHPImageTools::checkmatrix">checkmatrix</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="old3.php.html#775"><abbr title="PHPImageTools::imageline">imageline</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="old3.php.html#1478"><abbr title="PHPImageTools::quadran">quadran</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="old3.php.html#891"><abbr title="PHPImageTools::getn1n2">getn1n2</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="old3.php.html#510"><abbr title="PHPImageTools::writetext_style_underline">writetext_style_underline</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="old1.php.html#3255"><abbr title="PHPImage::loadfromfile">loadfromfile</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="old3.php.html#1326"><abbr title="PHPImageTools::setangle360">setangle360</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="old2.php.html#64"><abbr title="PHPImageTTFBox::__construct">__construct</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="old3.php.html#991"><abbr title="PHPImageTools::checkparams">checkparams</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="old3.php.html#679"><abbr title="PHPImageTools::imageellipsearc">imageellipsearc</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="old1.php.html#3526"><abbr title="PHPImage::copy">copy</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Position.php.html#95"><abbr title="Position::setPoint">setPoint</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="old1.php.html#569"><abbr title="PHPImage::drawrectanglewh">drawrectanglewh</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="old3.php.html#1105"><abbr title="PHPImageTools::checkfont">checkfont</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Size.php.html#95"><abbr title="Size::setSize">setSize</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="old1.php.html#188"><abbr title="PHPImage::__construct">__construct</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Point.php.html#95"><abbr title="Point::setPoint">setPoint</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="old1.php.html#323"><abbr title="PHPImage::drawlinewh">drawlinewh</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="old1.php.html#359"><abbr title="PHPImage::drawpolygon">drawpolygon</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="old3.php.html#734"><abbr title="PHPImageTools::imageellipse">imageellipse</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="old1.php.html#3351"><abbr title="PHPImage::copyresampledfit">copyresampledfit</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="old1.php.html#3485"><abbr title="PHPImage::copyresized">copyresized</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#154"><abbr title="Color::setColor">setColor</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#232"><abbr title="Image::createFromFile">createFromFile</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="old1.php.html#3396"><abbr title="PHPImage::copyresizedfit">copyresizedfit</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="old1.php.html#1940"><abbr title="PHPImage::drawimage">drawimage</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="old1.php.html#3441"><abbr title="PHPImage::copyresampled">copyresampled</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="old3.php.html#1515"><abbr title="PHPImageTools::lineangle">lineangle</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="old1.php.html#264"><abbr title="PHPImage::drawfilledellipsearc">drawfilledellipsearc</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="old1.php.html#3938"><abbr title="PHPImage::imagetext">imagetext</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="old1.php.html#3677"><abbr title="PHPImage::resample">resample</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#118"><abbr title="Image::copy">copy</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="old3.php.html#1356"><abbr title="PHPImageTools::getimageresource">getimageresource</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="old1.php.html#3721"><abbr title="PHPImage::resize">resize</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="old1.php.html#608"><abbr title="PHPImage::drawfilledrectanglewh">drawfilledrectanglewh</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="old3.php.html#1245"><abbr title="PHPImageTools::checksize">checksize</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="old1.php.html#3130"><abbr title="PHPImage::cacheok">cacheok</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="old1.php.html#30"><abbr title="PHPImageException::display_image">display_image</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="old1.php.html#1994"><abbr title="PHPImage::drawarc">drawarc</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="old1.php.html#2151"><abbr title="PHPImage::drawcircle">drawcircle</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="old1.php.html#3328"><abbr title="PHPImage::cleanrectanglewh">cleanrectanglewh</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="old3.php.html#1125"><abbr title="PHPImageTools::createfolder">createfolder</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="old3.php.html#1143"><abbr title="PHPImageTools::createfolderpath">createfolderpath</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="old3.php.html#1407"><abbr title="PHPImageTools::getlinestylelist">getlinestylelist</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="old1.php.html#204"><abbr title="PHPImage::maskalpha">maskalpha</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/RelativeValue.php.html#42"><abbr title="RelativeValue::get">get</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="old3.php.html#545"><abbr title="PHPImageTools::writetext_style">writetext_style</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#191"><abbr title="Image::gdColor">gdColor</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="old1.php.html#2451"><abbr title="PHPImage::mask">mask</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#74"><abbr title="Image::__destruct">__destruct</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="old1.php.html#2963"><abbr title="PHPImage::destroy">destroy</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="old1.php.html#3040"><abbr title="PHPImage::getnewcolor">getnewcolor</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="old1.php.html#3772"><abbr title="PHPImage::rotate">rotate</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="old1.php.html#3809"><abbr title="PHPImage::gettextposition">gettextposition</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="old1.php.html#3848"><abbr title="PHPImage::gettextbox">gettextbox</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="old1.php.html#3891"><abbr title="PHPImage::writetextwatermark">writetextwatermark</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="old1.php.html#3021"><abbr title="PHPImage::colorallocate">colorallocate</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#109"><abbr title="Image::clear">clear</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="old3.php.html#1089"><abbr title="PHPImageTools::checkfile">checkfile</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="old3.php.html#1312"><abbr title="PHPImageTools::imagewidth">imagewidth</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="old3.php.html#1264"><abbr title="PHPImageTools::imagesize">imagesize</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="old3.php.html#1280"><abbr title="PHPImageTools::resizefit">resizefit</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="old3.php.html#1391"><abbr title="PHPImageTools::getfileext">getfileext</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="old3.php.html#1162"><abbr title="PHPImageTools::checkbool">checkbool</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="old3.php.html#1298"><abbr title="PHPImageTools::imageheight">imageheight</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="old3.php.html#1377"><abbr title="PHPImageTools::readfile">readfile</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#30"><abbr title="Color::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="old3.php.html#1076"><abbr title="PHPImageTools::checkcreated">checkcreated</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#213"><abbr title="Image::fileTypeFromFilename">fileTypeFromFilename</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Point.php.html#32"><abbr title="Point::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Position.php.html#32"><abbr title="Position::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/RelativeValue.php.html#31"><abbr title="RelativeValue::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/RelativeValue.php.html#71"><abbr title="RelativeValue::__toString">__toString</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Size.php.html#32"><abbr title="Size::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Image.php.html#57"><abbr title="Image::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="old1.php.html#237"><abbr title="PHPImage::drawfilledcirclearc">drawfilledcirclearc</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="old3.php.html#1031"><abbr title="PHPImageTools::checkresource">checkresource</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="old1.php.html#402"><abbr title="PHPImage::drawfilledpolygon">drawfilledpolygon</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="old1.php.html#2275"><abbr title="PHPImage::drawfilledcircle">drawfilledcircle</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="old1.php.html#2297"><abbr title="PHPImage::drawfilledellipse">drawfilledellipse</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="old1.php.html#2943"><abbr title="PHPImage::create">create</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Arnapou/PHPImage/Component/Color.php.html#50"><abbr title="Color::invert">invert</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="old1.php.html#3753"><abbr title="PHPImage::setresource">setresource</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="old4.php.html#281"><abbr title="PHPImageColor::invert">invert</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 5.2.1</a> using <a href="https://secure.php.net/" target="_top">PHP 7.0.20-1~ubuntu16.04.1+deb.sury.org+1</a> with <a href="https://xdebug.org/">Xdebug 2.5.4</a> and <a href="https://phpunit.de/">PHPUnit 6.2.3</a> at Fri Jul 7 18:41:04 CEST 2017.</small>
+    </p>
+   </footer>
+  </div>
+  <script src=".js/jquery.min.js" type="text/javascript"></script>
+  <script src=".js/bootstrap.min.js" type="text/javascript"></script>
+  <script src=".js/holder.min.js" type="text/javascript"></script>
+  <script src=".js/d3.min.js" type="text/javascript"></script>
+  <script src=".js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([11,0,0,0,0,0,0,0,0,0,1,18], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([181,0,0,0,0,0,0,0,0,0,1,19], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,24,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#15\">Color<\/a>"],[0,15,"<a href=\"Arnapou\/PHPImage\/Component\/Point.php.html#16\">Point<\/a>"],[0,15,"<a href=\"Arnapou\/PHPImage\/Component\/Position.php.html#16\">Position<\/a>"],[0,9,"<a href=\"Arnapou\/PHPImage\/Component\/RelativeValue.php.html#15\">RelativeValue<\/a>"],[0,15,"<a href=\"Arnapou\/PHPImage\/Component\/Size.php.html#16\">Size<\/a>"],[100,0,"<a href=\"Arnapou\/PHPImage\/Exception\/FileNotFoundException.php.html#13\">FileNotFoundException<\/a>"],[100,0,"<a href=\"Arnapou\/PHPImage\/Exception\/GenericException.php.html#13\">GenericException<\/a>"],[100,0,"<a href=\"Arnapou\/PHPImage\/Exception\/InvalidAlphaException.php.html#13\">InvalidAlphaException<\/a>"],[100,0,"<a href=\"Arnapou\/PHPImage\/Exception\/InvalidArgumentException.php.html#13\">InvalidArgumentException<\/a>"],[100,0,"<a href=\"Arnapou\/PHPImage\/Exception\/InvalidFloatException.php.html#13\">InvalidFloatException<\/a>"],[100,0,"<a href=\"Arnapou\/PHPImage\/Exception\/InvalidImageResourceException.php.html#13\">InvalidImageResourceException<\/a>"],[100,0,"<a href=\"Arnapou\/PHPImage\/Exception\/InvalidIntegerException.php.html#13\">InvalidIntegerException<\/a>"],[100,0,"<a href=\"Arnapou\/PHPImage\/Exception\/InvalidNamedColorException.php.html#13\">InvalidNamedColorException<\/a>"],[100,0,"<a href=\"Arnapou\/PHPImage\/Exception\/InvalidPointException.php.html#13\">InvalidPointException<\/a>"],[100,0,"<a href=\"Arnapou\/PHPImage\/Exception\/InvalidPositionException.php.html#13\">InvalidPositionException<\/a>"],[100,0,"<a href=\"Arnapou\/PHPImage\/Exception\/InvalidRelativeValueException.php.html#13\">InvalidRelativeValueException<\/a>"],[100,0,"<a href=\"Arnapou\/PHPImage\/Exception\/InvalidSizeException.php.html#13\">InvalidSizeException<\/a>"],[100,0,"<a href=\"Arnapou\/PHPImage\/Exception\/OutOfBoundsException.php.html#13\">OutOfBoundsException<\/a>"],[100,0,"<a href=\"Arnapou\/PHPImage\/Exception\/UnknownFileTypeException.php.html#13\">UnknownFileTypeException<\/a>"],[96.666666666667,23,"<a href=\"Arnapou\/PHPImage\/Helper\/GD.php.html#15\">GD<\/a>"],[100,5,"<a href=\"Arnapou\/PHPImage\/Helper\/NamedColors.php.html#15\">NamedColors<\/a>"],[100,24,"<a href=\"Arnapou\/PHPImage\/Helper\/Parser.php.html#17\">Parser<\/a>"],[100,26,"<a href=\"Arnapou\/PHPImage\/Helper\/TypeChecker.php.html#23\">TypeChecker<\/a>"],[0,27,"<a href=\"Arnapou\/PHPImage\/Image.php.html#18\">Image<\/a>"],[0,5,"<a href=\"old1.php.html#15\">PHPImageException<\/a>"],[0,838,"<a href=\"old1.php.html#95\">PHPImage<\/a>"],[0,7,"<a href=\"old2.php.html#6\">PHPImageTTFBox<\/a>"],[0,283,"<a href=\"old3.php.html#6\">PHPImageTools<\/a>"],[0,7,"<a href=\"old4.php.html#232\">PHPImageColor<\/a>"],[100,6,"<a href=\"Arnapou\/PHPImage\/Helper\/HelperTrait.php.html#16\">HelperTrait<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,2,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#30\">Color::__construct<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#40\">Color::desaturate<\/a>"],[0,2,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#50\">Color::invert<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#62\">Color::setRed<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#71\">Color::setGreen<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#80\">Color::setBlue<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#89\">Color::setAlpha<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#98\">Color::getGreen<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#106\">Color::getRed<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#114\">Color::getBlue<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#122\">Color::getAlpha<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#130\">Color::getTransparency<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#138\">Color::isTransparent<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#146\">Color::isOpaque<\/a>"],[0,5,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#154\">Color::setColor<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#178\">Color::toArray<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#186\">Color::toHex<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Color.php.html#194\">Color::__toString<\/a>"],[0,2,"<a href=\"Arnapou\/PHPImage\/Component\/Point.php.html#32\">Point::__construct<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Point.php.html#45\">Point::getX<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Point.php.html#53\">Point::setX<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Point.php.html#62\">Point::getY<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Point.php.html#70\">Point::setY<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Point.php.html#78\">Point::isPercentX<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Point.php.html#86\">Point::isPercentY<\/a>"],[0,6,"<a href=\"Arnapou\/PHPImage\/Component\/Point.php.html#95\">Point::setPoint<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Point.php.html#117\">Point::__toString<\/a>"],[0,2,"<a href=\"Arnapou\/PHPImage\/Component\/Position.php.html#32\">Position::__construct<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Position.php.html#45\">Position::getX<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Position.php.html#53\">Position::setX<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Position.php.html#62\">Position::getY<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Position.php.html#70\">Position::setY<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Position.php.html#78\">Position::isPercentX<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Position.php.html#86\">Position::isPercentY<\/a>"],[0,6,"<a href=\"Arnapou\/PHPImage\/Component\/Position.php.html#95\">Position::setPoint<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Position.php.html#117\">Position::__toString<\/a>"],[0,2,"<a href=\"Arnapou\/PHPImage\/Component\/RelativeValue.php.html#31\">RelativeValue::__construct<\/a>"],[0,3,"<a href=\"Arnapou\/PHPImage\/Component\/RelativeValue.php.html#42\">RelativeValue::get<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/RelativeValue.php.html#53\">RelativeValue::set<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/RelativeValue.php.html#63\">RelativeValue::isPercent<\/a>"],[0,2,"<a href=\"Arnapou\/PHPImage\/Component\/RelativeValue.php.html#71\">RelativeValue::__toString<\/a>"],[0,2,"<a href=\"Arnapou\/PHPImage\/Component\/Size.php.html#32\">Size::__construct<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Size.php.html#45\">Size::getW<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Size.php.html#53\">Size::setW<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Size.php.html#62\">Size::getH<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Size.php.html#70\">Size::setH<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Size.php.html#78\">Size::isPercentW<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Size.php.html#86\">Size::isPercentH<\/a>"],[0,6,"<a href=\"Arnapou\/PHPImage\/Component\/Size.php.html#95\">Size::setSize<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Component\/Size.php.html#117\">Size::__toString<\/a>"],[100,7,"<a href=\"Arnapou\/PHPImage\/Helper\/GD.php.html#25\">GD::createImage<\/a>"],[100,5,"<a href=\"Arnapou\/PHPImage\/Helper\/GD.php.html#56\">GD::setAlpha<\/a>"],[93.333333333333,11,"<a href=\"Arnapou\/PHPImage\/Helper\/GD.php.html#88\">GD::realCopy<\/a>"],[100,1,"<a href=\"Arnapou\/PHPImage\/Helper\/NamedColors.php.html#463\">NamedColors::__construct<\/a>"],[100,1,"<a href=\"Arnapou\/PHPImage\/Helper\/NamedColors.php.html#471\">NamedColors::exists<\/a>"],[100,2,"<a href=\"Arnapou\/PHPImage\/Helper\/NamedColors.php.html#481\">NamedColors::get<\/a>"],[100,1,"<a href=\"Arnapou\/PHPImage\/Helper\/NamedColors.php.html#492\">NamedColors::getAll<\/a>"],[100,7,"<a href=\"Arnapou\/PHPImage\/Helper\/Parser.php.html#24\">Parser::parseColor<\/a>"],[100,9,"<a href=\"Arnapou\/PHPImage\/Helper\/Parser.php.html#74\">Parser::parseRelativeValue<\/a>"],[100,8,"<a href=\"Arnapou\/PHPImage\/Helper\/Parser.php.html#107\">Parser::parsePosition<\/a>"],[100,2,"<a href=\"Arnapou\/PHPImage\/Helper\/TypeChecker.php.html#34\">TypeChecker::checkPoint<\/a>"],[100,2,"<a href=\"Arnapou\/PHPImage\/Helper\/TypeChecker.php.html#55\">TypeChecker::checkSize<\/a>"],[100,4,"<a href=\"Arnapou\/PHPImage\/Helper\/TypeChecker.php.html#72\">TypeChecker::checkResource<\/a>"],[100,4,"<a href=\"Arnapou\/PHPImage\/Helper\/TypeChecker.php.html#86\">TypeChecker::checkAlpha<\/a>"],[100,2,"<a href=\"Arnapou\/PHPImage\/Helper\/TypeChecker.php.html#104\">TypeChecker::checkColorInteger<\/a>"],[100,6,"<a href=\"Arnapou\/PHPImage\/Helper\/TypeChecker.php.html#119\">TypeChecker::checkInteger<\/a>"],[100,6,"<a href=\"Arnapou\/PHPImage\/Helper\/TypeChecker.php.html#142\">TypeChecker::checkFloat<\/a>"],[0,2,"<a href=\"Arnapou\/PHPImage\/Image.php.html#57\">Image::__construct<\/a>"],[0,3,"<a href=\"Arnapou\/PHPImage\/Image.php.html#74\">Image::__destruct<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Image.php.html#85\">Image::getResource<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Image.php.html#93\">Image::getWidth<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Image.php.html#101\">Image::getHeight<\/a>"],[0,3,"<a href=\"Arnapou\/PHPImage\/Image.php.html#109\">Image::clear<\/a>"],[0,4,"<a href=\"Arnapou\/PHPImage\/Image.php.html#118\">Image::copy<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Image.php.html#171\">Image::fill<\/a>"],[0,1,"<a href=\"Arnapou\/PHPImage\/Image.php.html#181\">Image::setPixel<\/a>"],[0,3,"<a href=\"Arnapou\/PHPImage\/Image.php.html#191\">Image::gdColor<\/a>"],[0,2,"<a href=\"Arnapou\/PHPImage\/Image.php.html#213\">Image::fileTypeFromFilename<\/a>"],[0,5,"<a href=\"Arnapou\/PHPImage\/Image.php.html#232\">Image::createFromFile<\/a>"],[0,1,"<a href=\"old1.php.html#22\">PHPImageException::__construct<\/a>"],[0,4,"<a href=\"old1.php.html#30\">PHPImageException::display_image<\/a>"],[0,6,"<a href=\"old1.php.html#188\">PHPImage::__construct<\/a>"],[0,3,"<a href=\"old1.php.html#204\">PHPImage::maskalpha<\/a>"],[0,2,"<a href=\"old1.php.html#237\">PHPImage::drawfilledcirclearc<\/a>"],[0,5,"<a href=\"old1.php.html#264\">PHPImage::drawfilledellipsearc<\/a>"],[0,6,"<a href=\"old1.php.html#323\">PHPImage::drawlinewh<\/a>"],[0,6,"<a href=\"old1.php.html#359\">PHPImage::drawpolygon<\/a>"],[0,2,"<a href=\"old1.php.html#402\">PHPImage::drawfilledpolygon<\/a>"],[0,29,"<a href=\"old1.php.html#425\">PHPImage::drawline<\/a>"],[0,6,"<a href=\"old1.php.html#569\">PHPImage::drawrectanglewh<\/a>"],[0,4,"<a href=\"old1.php.html#608\">PHPImage::drawfilledrectanglewh<\/a>"],[0,59,"<a href=\"old1.php.html#636\">PHPImage::drawfilledrectangle<\/a>"],[0,59,"<a href=\"old1.php.html#872\">PHPImage::drawrectangle<\/a>"],[0,152,"<a href=\"old1.php.html#1146\">PHPImage::drawfilledcorner<\/a>"],[0,107,"<a href=\"old1.php.html#1601\">PHPImage::drawcorner<\/a>"],[0,1,"<a href=\"old1.php.html#1910\">PHPImage::setbackgroundimage<\/a>"],[0,5,"<a href=\"old1.php.html#1940\">PHPImage::drawimage<\/a>"],[0,4,"<a href=\"old1.php.html#1994\">PHPImage::drawarc<\/a>"],[0,18,"<a href=\"old1.php.html#2036\">PHPImage::drawellipsearc<\/a>"],[0,4,"<a href=\"old1.php.html#2151\">PHPImage::drawcircle<\/a>"],[0,16,"<a href=\"old1.php.html#2187\">PHPImage::drawellipse<\/a>"],[0,2,"<a href=\"old1.php.html#2275\">PHPImage::drawfilledcircle<\/a>"],[0,2,"<a href=\"old1.php.html#2297\">PHPImage::drawfilledellipse<\/a>"],[0,14,"<a href=\"old1.php.html#2359\">PHPImage::replacecoloralpha<\/a>"],[0,12,"<a href=\"old1.php.html#2406\">PHPImage::replacecolor<\/a>"],[0,3,"<a href=\"old1.php.html#2451\">PHPImage::mask<\/a>"],[0,46,"<a href=\"old1.php.html#2483\">PHPImage::convolution<\/a>"],[0,93,"<a href=\"old1.php.html#2661\">PHPImage::effect<\/a>"],[0,2,"<a href=\"old1.php.html#2943\">PHPImage::create<\/a>"],[0,3,"<a href=\"old1.php.html#2963\">PHPImage::destroy<\/a>"],[0,1,"<a href=\"old1.php.html#2980\">PHPImage::maketransparent<\/a>"],[0,1,"<a href=\"old1.php.html#2991\">PHPImage::fill<\/a>"],[0,1,"<a href=\"old1.php.html#3002\">PHPImage::alphablending<\/a>"],[0,1,"<a href=\"old1.php.html#3011\">PHPImage::antialias<\/a>"],[0,3,"<a href=\"old1.php.html#3021\">PHPImage::colorallocate<\/a>"],[0,3,"<a href=\"old1.php.html#3040\">PHPImage::getnewcolor<\/a>"],[0,1,"<a href=\"old1.php.html#3059\">PHPImage::colorat<\/a>"],[0,1,"<a href=\"old1.php.html#3075\">PHPImage::setpixel<\/a>"],[0,1,"<a href=\"old1.php.html#3084\">PHPImage::savealpha<\/a>"],[0,10,"<a href=\"old1.php.html#3095\">PHPImage::savetofile<\/a>"],[0,4,"<a href=\"old1.php.html#3130\">PHPImage::cacheok<\/a>"],[0,14,"<a href=\"old1.php.html#3147\">PHPImage::headers<\/a>"],[0,12,"<a href=\"old1.php.html#3206\">PHPImage::display<\/a>"],[0,8,"<a href=\"old1.php.html#3255\">PHPImage::loadfromfile<\/a>"],[0,1,"<a href=\"old1.php.html#3292\">PHPImage::cleanat<\/a>"],[0,1,"<a href=\"old1.php.html#3300\">PHPImage::cleanall<\/a>"],[0,1,"<a href=\"old1.php.html#3315\">PHPImage::cleanrectangle<\/a>"],[0,3,"<a href=\"old1.php.html#3328\">PHPImage::cleanrectanglewh<\/a>"],[0,5,"<a href=\"old1.php.html#3351\">PHPImage::copyresampledfit<\/a>"],[0,5,"<a href=\"old1.php.html#3396\">PHPImage::copyresizedfit<\/a>"],[0,5,"<a href=\"old1.php.html#3441\">PHPImage::copyresampled<\/a>"],[0,5,"<a href=\"old1.php.html#3485\">PHPImage::copyresized<\/a>"],[0,6,"<a href=\"old1.php.html#3526\">PHPImage::copy<\/a>"],[0,20,"<a href=\"old1.php.html#3568\">PHPImage::realcopy<\/a>"],[0,1,"<a href=\"old1.php.html#3639\">PHPImage::getclone<\/a>"],[0,1,"<a href=\"old1.php.html#3651\">PHPImage::clonepropertiesfrom<\/a>"],[0,1,"<a href=\"old1.php.html#3666\">PHPImage::resamplefit<\/a>"],[0,4,"<a href=\"old1.php.html#3677\">PHPImage::resample<\/a>"],[0,1,"<a href=\"old1.php.html#3710\">PHPImage::resizefit<\/a>"],[0,4,"<a href=\"old1.php.html#3721\">PHPImage::resize<\/a>"],[0,2,"<a href=\"old1.php.html#3753\">PHPImage::setresource<\/a>"],[0,3,"<a href=\"old1.php.html#3772\">PHPImage::rotate<\/a>"],[0,3,"<a href=\"old1.php.html#3809\">PHPImage::gettextposition<\/a>"],[0,3,"<a href=\"old1.php.html#3848\">PHPImage::gettextbox<\/a>"],[0,3,"<a href=\"old1.php.html#3891\">PHPImage::writetextwatermark<\/a>"],[0,4,"<a href=\"old1.php.html#3938\">PHPImage::imagetext<\/a>"],[0,24,"<a href=\"old1.php.html#3972\">PHPImage::writetext<\/a>"],[0,7,"<a href=\"old2.php.html#64\">PHPImageTTFBox::__construct<\/a>"],[0,1,"<a href=\"old3.php.html#12\">PHPImageTools::linestylenames<\/a>"],[0,1,"<a href=\"old3.php.html#21\">PHPImageTools::shapestylenames<\/a>"],[0,15,"<a href=\"old3.php.html#39\">PHPImageTools::imagerotation<\/a>"],[0,46,"<a href=\"old3.php.html#137\">PHPImageTools::imagefilledpolygon<\/a>"],[0,19,"<a href=\"old3.php.html#355\">PHPImageTools::imageellipsearc_points<\/a>"],[0,10,"<a href=\"old3.php.html#465\">PHPImageTools::writetext_style_shadow<\/a>"],[0,8,"<a href=\"old3.php.html#510\">PHPImageTools::writetext_style_underline<\/a>"],[0,3,"<a href=\"old3.php.html#545\">PHPImageTools::writetext_style<\/a>"],[0,20,"<a href=\"old3.php.html#578\">PHPImageTools::writetext_init<\/a>"],[0,7,"<a href=\"old3.php.html#679\">PHPImageTools::imageellipsearc<\/a>"],[0,5,"<a href=\"old3.php.html#734\">PHPImageTools::imageellipse<\/a>"],[0,9,"<a href=\"old3.php.html#775\">PHPImageTools::imageline<\/a>"],[0,14,"<a href=\"old3.php.html#824\">PHPImageTools::checkshapestyle<\/a>"],[0,8,"<a href=\"old3.php.html#891\">PHPImageTools::getn1n2<\/a>"],[0,1,"<a href=\"old3.php.html#933\">PHPImageTools::gete1e2<\/a>"],[0,11,"<a href=\"old3.php.html#945\">PHPImageTools::checklinestyle<\/a>"],[0,7,"<a href=\"old3.php.html#991\">PHPImageTools::checkparams<\/a>"],[0,2,"<a href=\"old3.php.html#1031\">PHPImageTools::checkresource<\/a>"],[0,9,"<a href=\"old3.php.html#1044\">PHPImageTools::checkmatrix<\/a>"],[0,2,"<a href=\"old3.php.html#1076\">PHPImageTools::checkcreated<\/a>"],[0,3,"<a href=\"old3.php.html#1089\">PHPImageTools::checkfile<\/a>"],[0,6,"<a href=\"old3.php.html#1105\">PHPImageTools::checkfont<\/a>"],[0,3,"<a href=\"old3.php.html#1125\">PHPImageTools::createfolder<\/a>"],[0,3,"<a href=\"old3.php.html#1143\">PHPImageTools::createfolderpath<\/a>"],[0,2,"<a href=\"old3.php.html#1162\">PHPImageTools::checkbool<\/a>"],[0,18,"<a href=\"old3.php.html#1181\">PHPImageTools::checkposition<\/a>"],[0,4,"<a href=\"old3.php.html#1245\">PHPImageTools::checksize<\/a>"],[0,2,"<a href=\"old3.php.html#1264\">PHPImageTools::imagesize<\/a>"],[0,2,"<a href=\"old3.php.html#1280\">PHPImageTools::resizefit<\/a>"],[0,2,"<a href=\"old3.php.html#1298\">PHPImageTools::imageheight<\/a>"],[0,2,"<a href=\"old3.php.html#1312\">PHPImageTools::imagewidth<\/a>"],[0,7,"<a href=\"old3.php.html#1326\">PHPImageTools::setangle360<\/a>"],[0,4,"<a href=\"old3.php.html#1356\">PHPImageTools::getimageresource<\/a>"],[0,2,"<a href=\"old3.php.html#1377\">PHPImageTools::readfile<\/a>"],[0,2,"<a href=\"old3.php.html#1391\">PHPImageTools::getfileext<\/a>"],[0,3,"<a href=\"old3.php.html#1407\">PHPImageTools::getlinestylelist<\/a>"],[0,1,"<a href=\"old3.php.html#1428\">PHPImageTools::linelength<\/a>"],[0,1,"<a href=\"old3.php.html#1438\">PHPImageTools::deg2rad<\/a>"],[0,1,"<a href=\"old3.php.html#1448\">PHPImageTools::rad2deg<\/a>"],[0,1,"<a href=\"old3.php.html#1461\">PHPImageTools::rotatepoint<\/a>"],[0,9,"<a href=\"old3.php.html#1478\">PHPImageTools::quadran<\/a>"],[0,5,"<a href=\"old3.php.html#1515\">PHPImageTools::lineangle<\/a>"],[0,1,"<a href=\"old3.php.html#1540\">PHPImageTools::ellipseperimeter<\/a>"],[0,1,"<a href=\"old3.php.html#1550\">PHPImageTools::switchvar<\/a>"],[0,1,"<a href=\"old4.php.html#263\">PHPImageColor::__construct<\/a>"],[0,1,"<a href=\"old4.php.html#272\">PHPImageColor::getHTML<\/a>"],[0,2,"<a href=\"old4.php.html#281\">PHPImageColor::invert<\/a>"],[0,1,"<a href=\"old4.php.html#294\">PHPImageColor::getvalues<\/a>"],[0,1,"<a href=\"old4.php.html#302\">PHPImageColor::togray<\/a>"],[0,1,"<a href=\"old4.php.html#312\">PHPImageColor::setcolor<\/a>"],[100,2,"<a href=\"Arnapou\/PHPImage\/Helper\/HelperTrait.php.html#26\">HelperTrait::parser<\/a>"],[100,2,"<a href=\"Arnapou\/PHPImage\/Helper\/HelperTrait.php.html#37\">HelperTrait::gd<\/a>"],[100,2,"<a href=\"Arnapou\/PHPImage\/Helper\/HelperTrait.php.html#48\">HelperTrait::type<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

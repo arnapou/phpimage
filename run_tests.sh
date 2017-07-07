@@ -24,4 +24,4 @@ else
     fi
 fi
 
-$PHP_BIN $DIR/vendor/bin/phpunit -c $DIR/tests/phpunit.xml
+$PHP_BIN $DIR/vendor/bin/phpunit --coverage-text=tests/coverage/report.txt --coverage-html tests/coverage/html -c $DIR/tests/phpunit.xml
