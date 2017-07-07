@@ -74,6 +74,6 @@ class RelativeValue
         if ($this->isPercent) {
             $str .= '%';
         }
-        return $str;
+        return (string)$str;
     }
 }

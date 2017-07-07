@@ -10,7 +10,7 @@
 
 namespace Arnapou\PHPImage\Exception;
 
-class NotSizeException extends GenericException
+class InvalidRelativeValueException extends GenericException
 {
 
 }

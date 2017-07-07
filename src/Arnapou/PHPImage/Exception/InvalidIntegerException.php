@@ -10,7 +10,7 @@
 
 namespace Arnapou\PHPImage\Exception;
 
-class NotIntegerException extends GenericException
+class InvalidIntegerException extends GenericException
 {
 
 }

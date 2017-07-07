@@ -11,8 +11,6 @@
 namespace Arnapou\PHPImage;
 
 use Arnapou\PHPImage\Component\Color;
-use Arnapou\PHPImage\Component\Point;
-use Arnapou\PHPImage\Component\Size;
 use Arnapou\PHPImage\Exception\FileNotFoundException;
 use Arnapou\PHPImage\Exception\UnknownFileTypeException;
 use Arnapou\PHPImage\Helper\HelperTrait;
@@ -58,8 +56,8 @@ class Image
      */
     public function __construct($width, $height, Color $backgroundColor = null)
     {
-        $this->typeChecker()->checkInteger($width, 1);
-        $this->typeChecker()->checkInteger($height, 1);
+        $this->type()->checkInteger($width, 1);
+        $this->type()->checkInteger($height, 1);
         $this->width = $width;
         $this->height = $height;
         if ($backgroundColor) {
@@ -75,7 +73,10 @@ class Image
      */
     public function __destruct()
     {
-        $this->gdDestroy();
+        if ($this->img && \is_resource($this->img)) {
+            \imagedestroy($this->img);
+        }
+        $this->img = null;
     }
 
     /**
@@ -107,42 +108,33 @@ class Image
      */
     public function clear()
     {
-        $this->gdDestroy();
+        if ($this->img && \is_resource($this->img)) {
+            \imagedestroy($this->img);
+        }
         $this->gdAllocatedColors = [];
-        $this->img = $this->gd()->createImage($this->width, $this->height, $this->gdColor($this->backgroundColor));
+        $this->img = $this->gd()->createImage($this->width, $this->height, $this->backgroundColor->toArray());
     }
 
     public function copy($source, $dstXY = null, $srcXY = null, $srcWH = null,
-                         $dstPos = null, $srcPos = null, $realCopy = false, $forcedAlpha = null)
+                         $dstPos = null, $realCopy = false, $forcedAlpha = null)
     {
-        $this->typeChecker()->checkResource($source);
-        if($forcedAlpha !== null) {
-            $this->typeChecker()->checkAlpha($forcedAlpha);
+        $this->type()->checkResource($source);
+        $this->type()->checkPoint($dstXY, $dstx, $dsty, $this->width - 1, $this->height - 1);
+        $this->type()->checkPoint($srcXY, $srcx, $srcy, \imagesx($source), \imagesy($source));
+        $this->type()->checkSize($srcWH, $srcw, $srch, \imagesx($source), \imagesy($source));
+
+        if ($forcedAlpha !== null) {
+            $this->type()->checkAlpha($forcedAlpha);
             $transparency = Color::MAX_ALPHA - $forcedAlpha;
+        } else {
+            $transparency = null;
         }
-        else {
-        $transparency = null;
-
-        }
-
-        $dstXY = new Point($dstXY);
-        $dstx = $dstXY->getX($this->width - 1);
-        $dsty = $dstXY->getY($this->height - 1);
-
-        $srcXY = new Point($srcXY);
-        $srcx = $srcXY->getX(\imagesx($source));
-        $srcy = $srcXY->getY(\imagesy($source));
-
-        $srcWH = new Size($srcWH);
-        $srcw = $srcWH->getW(\imagesx($source));
-        $srch = $srcWH->getH(\imagesy($source));
 
         if ($realCopy) {
             $this->gd()->realCopy($this->img, $source, $dstx, $dsty, $srcx, $srcy, $srcw, $srch, $transparency);
-        } elseif($forcedAlpha) {
+        } elseif ($transparency !== null) {
             imagecopymerge($this->img, $source, $dstx, $dsty, $srcx, $srcy, $srcw, $srch, floor(100 * $transparency / 127));
-        }
-        else {
+        } else {
             imagecopy($this->img, $source, $dstx, $dsty, $srcx, $srcy, $srcw, $srch);
         }
 //
@@ -173,28 +165,22 @@ class Image
     }
 
     /**
-     * @param $position
+     * @param $point
      * @param $color
      */
-    public function fill($position, $color)
+    public function fill($point, $color)
     {
-        $position = new Point($position);
-        $x = $position->getX($this->width - 1);
-        $y = $position->getY($this->height - 1);
+        $this->type()->checkPoint($point, $x, $y, $this->width - 1, $this->height - 1);
         \imagefill($this->img, $x, $y, $this->gdColor($color));
     }
 
     /**
-     * @param $position
+     * @param $point
      * @param $color
      */
-    public function setPixel($position, $color)
+    public function setPixel($point, $color)
     {
-        $position = new Point($position);
-        $x = $position->getX($this->width - 1);
-        $y = $position->getY($this->height - 1);
-        $this->typeChecker()->checkInteger($x, 0, $this->width - 1);
-        $this->typeChecker()->checkInteger($y, 0, $this->height - 1);
+        $this->type()->checkPoint($point, $x, $y, $this->width - 1, $this->height - 1);
         \imagesetpixel($this->img, $x, $y, $this->gdColor($color));
     }
 
@@ -218,16 +204,6 @@ class Image
         return $this->gdAllocatedColors[$key];
     }
 
-    /**
-     *
-     */
-    protected function gdDestroy()
-    {
-        if ($this->img) {
-            \imagedestroy($this->img);
-        }
-        $this->img = null;
-    }
 
     /**
      * @param $filename

@@ -10,7 +10,7 @@
 
 namespace Arnapou\PHPImage\Component;
 
-use Arnapou\PHPImage\Exception\NotSizeException;
+use Arnapou\PHPImage\Exception\InvalidSizeException;
 use Arnapou\PHPImage\Helper\HelperTrait;
 
 class Size
@@ -90,7 +90,7 @@ class Size
 
     /**
      * @param string $size
-     * @throws NotSizeException
+     * @throws InvalidSizeException
      */
     public function setSize($size)
     {
@@ -103,7 +103,7 @@ class Size
                     $size = explode(' ', $size);
                 }
                 if (count($size) != 2 || !isset($size[0], $size[1])) {
-                    throw new NotSizeException();
+                    throw new InvalidSizeException();
                 }
                 $this->setW($size[0]);
                 $this->setH($size[1]);

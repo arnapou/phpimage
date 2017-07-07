@@ -10,7 +10,7 @@
 
 namespace Arnapou\PHPImage\Exception;
 
-class NotFloatException extends GenericException
+class InvalidArgumentException extends GenericException
 {
 
 }

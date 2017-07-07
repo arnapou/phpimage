@@ -10,13 +10,16 @@
 
 namespace Arnapou\PHPImage\Helper;
 
+use Arnapou\PHPImage\Exception\InvalidArgumentException;
+
 class GD
 {
     /**
-     * @param      $w
-     * @param      $h
-     * @param null $bgColor
+     * @param            $w
+     * @param            $h
+     * @param array|null $bgColor RGB or RGBA array of int
      * @return resource
+     * @throws InvalidArgumentException
      */
     public function createImage($w, $h, $bgColor = null)
     {
@@ -26,13 +29,19 @@ class GD
 
         if ($bgColor === null) {
             // transparent white by default
-            $bgColor = \imagecolorallocatealpha($image, 255, 255, 255, 127);
+            $fillColor = \imagecolorallocatealpha($image, 255, 255, 255, 127);
+        } elseif (\is_array($bgColor) && count($bgColor) == 3) {
+            $fillColor = \imagecolorallocatealpha($image, $bgColor[0], $bgColor[1], $bgColor[2], 0);
+        } elseif (\is_array($bgColor) && count($bgColor) == 4) {
+            $fillColor = \imagecolorallocatealpha($image, $bgColor[0], $bgColor[1], $bgColor[2], 127 - $bgColor[3]);
+        } else {
+            throw new InvalidArgumentException('bgColor should be a RGB or RGBA array of int');
         }
 
-        \imagefill($image, 0, 0, $bgColor);
-        $alpha = $bgColor >> 24;
+        \imagefill($image, 0, 0, $fillColor);
+        $alpha = $fillColor >> 24;
         if ($alpha == 127) {
-            \imagecolortransparent($image, $bgColor);
+            \imagecolortransparent($image, $fillColor);
         }
 
         return $image;

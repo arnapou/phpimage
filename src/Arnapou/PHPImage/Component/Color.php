@@ -61,7 +61,7 @@ class Color
      */
     public function setRed($value)
     {
-        $this->typeChecker()->checkColorInteger($value);
+        $this->type()->checkColorInteger($value);
         $this->RGBA[0] = $value;
     }
 
@@ -70,7 +70,7 @@ class Color
      */
     public function setGreen($value)
     {
-        $this->typeChecker()->checkColorInteger($value);
+        $this->type()->checkColorInteger($value);
         $this->RGBA[1] = $value;
     }
 
@@ -79,7 +79,7 @@ class Color
      */
     public function setBlue($value)
     {
-        $this->typeChecker()->checkColorInteger($value);
+        $this->type()->checkColorInteger($value);
         $this->RGBA[2] = $value;
     }
 
@@ -88,7 +88,7 @@ class Color
      */
     public function setAlpha($value)
     {
-        $this->typeChecker()->checkAlpha($value);
+        $this->type()->checkAlpha($value);
         $this->RGBA[3] = $value;
     }
 
@@ -166,10 +166,10 @@ class Color
         } else {
             $this->RGBA = $this->parser()->parseColor((string)$color);
         }
-        $this->typeChecker()->checkColorInteger($this->RGBA[0]);
-        $this->typeChecker()->checkColorInteger($this->RGBA[1]);
-        $this->typeChecker()->checkColorInteger($this->RGBA[2]);
-        $this->typeChecker()->checkAlpha($this->RGBA[3]);
+        $this->type()->checkColorInteger($this->RGBA[0]);
+        $this->type()->checkColorInteger($this->RGBA[1]);
+        $this->type()->checkColorInteger($this->RGBA[2]);
+        $this->type()->checkAlpha($this->RGBA[3]);
     }
 
     /**

@@ -10,7 +10,9 @@
 
 namespace Arnapou\PHPImage\Helper;
 
-use Arnapou\PHPImage\Exception\NotPointException;
+use Arnapou\PHPImage\Component\Color;
+use Arnapou\PHPImage\Exception\InvalidPositionException;
+use Arnapou\PHPImage\Exception\InvalidRelativeValueException;
 
 class Parser
 {
@@ -21,7 +23,10 @@ class Parser
      */
     public function parseColor($value)
     {
-        $RGBA = [0, 0, 0, self::MAX_ALPHA];
+        if (\is_array($value)) {
+            $value = \implode(' ', $value);
+        }
+        $RGBA = [0, 0, 0, Color::MAX_ALPHA];
         $color = strtolower(trim($value));
 
         if (preg_match('/\#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})/i', $color, $m)) {
@@ -41,7 +46,7 @@ class Parser
         $color = " $color ";
         if (preg_match('/\s*([0-9]+(\.[0-9]+)?)\s*%\s*/si', $color, $m)) {
             // floating alpha
-            $RGBA[3] = round(floatval($m[1]) * self::MAX_ALPHA / 100);
+            $RGBA[3] = round(floatval($m[1]) * Color::MAX_ALPHA / 100);
             $color = str_replace($m[0], '', $color);
         } elseif (preg_match('/\s+([0-9]+)\s+/si', $color, $m)) {
             // integer alpha
@@ -64,7 +69,7 @@ class Parser
     /**
      * @param string $value
      * @return array [ value, isPercent ]
-     * @throws NotPointException
+     * @throws InvalidRelativeValueException
      */
     public function parseRelativeValue($value)
     {
@@ -89,9 +94,41 @@ class Parser
             $value = 100;
             $isPercent = true;
         } else {
-            throw new NotPointException();
+            throw new InvalidRelativeValueException();
         }
         return [$value, $isPercent];
+    }
+
+    /**
+     * @param string $value
+     * @return array [ x, y ]
+     * @throws InvalidPositionException
+     */
+    public function parsePosition($value)
+    {
+        if (\is_array($value)) {
+            $value = \implode(' ', $value);
+        }
+        $value = trim((string)$value);
+        // sanitize
+        if (stripos($value, 'center') !== false) {
+            $value = \str_ireplace('center', '50%', $value);
+        }
+        if (stripos($value, 'top') !== false) {
+            $value = \str_ireplace('top', '', $value) . ' 0%';
+        } elseif (stripos($value, 'bottom') !== false) {
+            $value = \str_ireplace('bottom', '', $value) . ' 100%';
+        }
+        if (stripos($value, 'left') !== false) {
+            $value = '0% ' . \str_ireplace('left', '', $value);
+        } elseif (stripos($value, 'right') !== false) {
+            $value = '100% ' . \str_ireplace('right', '', $value);
+        }
+        // final check
+        if (\preg_match('!([0-9]+(?:\.[0-9]+)?)%\s+([0-9]+(?:\.[0-9]+)?)%!', $value, $m)) {
+            return [\floatval($m[1]), \floatval($m[2])];
+        }
+        throw new InvalidPositionException($value);
     }
 
 }

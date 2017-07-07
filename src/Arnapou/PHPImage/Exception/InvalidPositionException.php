@@ -10,7 +10,7 @@
 
 namespace Arnapou\PHPImage\Exception;
 
-class NotPointException extends GenericException
+class InvalidPositionException extends GenericException
 {
 
 }

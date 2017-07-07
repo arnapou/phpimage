@@ -13,7 +13,7 @@ namespace Arnapou\PHPImage\Component;
 use Arnapou\PHPImage\Exception\InvalidPointException;
 use Arnapou\PHPImage\Helper\HelperTrait;
 
-class Point
+class Position
 {
     use HelperTrait;
     /**

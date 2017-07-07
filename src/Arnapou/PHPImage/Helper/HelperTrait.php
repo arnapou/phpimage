@@ -42,7 +42,7 @@ trait HelperTrait
     /**
      * @return TypeChecker
      */
-    protected function typeChecker()
+    protected function type()
     {
         if (!isset($this->helpers[__FUNCTION__])) {
             $this->helpers[__FUNCTION__] = new TypeChecker();
