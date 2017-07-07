@@ -19,6 +19,8 @@ class TestCase extends \PHPUnit\Framework\TestCase
         $filename = __DIR__ . '/../../images/tested/' . $name . '.png';
         if (!\is_file($filename)) {
             \imagepng($image, $filename);
+            \imagedestroy($image);
+            $this->assertThat(IsImageIdentical::IDENTICAL, new IsImageIdentical(), $name);
             return true;
         }
         $image2 = \imagecreatefrompng($filename);
@@ -28,6 +30,9 @@ class TestCase extends \PHPUnit\Framework\TestCase
         $w2 = \imagesx($image2);
         $h2 = \imagesy($image2);
         if ($w1 !== $w2 || $h1 !== $h2) {
+            \imagedestroy($image);
+            \imagedestroy($image2);
+            $this->assertThat(IsImageIdentical::DIFFERENT, new IsImageIdentical(), $name);
             return false;
         }
         for ($y = 0; $y < $h1; $y++) {

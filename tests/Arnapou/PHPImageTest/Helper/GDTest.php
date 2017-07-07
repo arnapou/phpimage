@@ -33,6 +33,7 @@ class GDTest extends TestCase
 
     /**
      * @covers ::createImage
+     * @covers ::colorAllocate
      */
     public function testCreateImageValid()
     {
@@ -80,6 +81,7 @@ class GDTest extends TestCase
 
     /**
      * @covers ::realCopy
+     * @covers ::setPixel
      */
     public function testRealCopy()
     {
@@ -87,6 +89,17 @@ class GDTest extends TestCase
             'realCopy1' => function () {
                 $image1 = $this->gd()->createImage(10, 10, [255, 0, 0, 30]);
                 $image2 = $this->gd()->createImage(5, 5, [0, 0, 255, 70]);
+
+                \imagealphablending($image1, false);
+                \imagealphablending($image2, false);
+                $this->gd()->setPixel($image1, 2, 2, [0, 0, 0, 0]);
+                $this->gd()->setPixel($image2, 0, 0, [0, 0, 0, 0]);
+
+                $this->gd()->setPixel($image1, 6, 6, [0, 0, 0, 110]);
+                $this->gd()->setPixel($image2, 4, 4, [0, 0, 0, 110]);
+                \imagealphablending($image1, true);
+                \imagealphablending($image2, true);
+
                 $this->gd()->realCopy($image1, $image2, 2, 2, 0, 0, 5, 5);
                 \imagedestroy($image2);
                 return $image1;

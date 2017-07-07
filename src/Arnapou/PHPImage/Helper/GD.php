@@ -15,6 +15,36 @@ use Arnapou\PHPImage\Exception\InvalidArgumentException;
 class GD
 {
     /**
+     * @param $image
+     * @param $color              RGB or RGBA array of int
+     *                            alpha is 0 for transparent and 127 for opaque
+     * @return int
+     * @throws InvalidArgumentException
+     */
+    public function colorAllocate($image, $color)
+    {
+        if (\is_array($color) && count($color) == 3) {
+            return \imagecolorallocatealpha($image, $color[0], $color[1], $color[2], 0);
+        } elseif (\is_array($color) && count($color) == 4) {
+            return \imagecolorallocatealpha($image, $color[0], $color[1], $color[2], 127 - $color[3]);
+        } else {
+            throw new InvalidArgumentException('bgColor should be a RGB or RGBA array of int');
+        }
+    }
+
+    /**
+     * @param $image
+     * @param $x
+     * @param $y
+     * @param $color              RGB or RGBA array of int
+     *                            alpha is 0 for transparent and 127 for opaque
+     */
+    public function setPixel($image, $x, $y, $color)
+    {
+        \imagesetpixel($image, $x, $y, $this->colorAllocate($image, $color));
+    }
+
+    /**
      * @param            $w
      * @param            $h
      * @param array|null $bgColor RGB or RGBA array of int
@@ -29,14 +59,9 @@ class GD
         \imagealphablending($image, true);
 
         if ($bgColor === null) {
-            // transparent white by default
             $fillColor = \imagecolorallocatealpha($image, 255, 255, 255, 127);
-        } elseif (\is_array($bgColor) && count($bgColor) == 3) {
-            $fillColor = \imagecolorallocatealpha($image, $bgColor[0], $bgColor[1], $bgColor[2], 0);
-        } elseif (\is_array($bgColor) && count($bgColor) == 4) {
-            $fillColor = \imagecolorallocatealpha($image, $bgColor[0], $bgColor[1], $bgColor[2], 127 - $bgColor[3]);
         } else {
-            throw new InvalidArgumentException('bgColor should be a RGB or RGBA array of int');
+            $fillColor = $this->colorAllocate($image, $bgColor);
         }
 
         \imagefill($image, 0, 0, $fillColor);
