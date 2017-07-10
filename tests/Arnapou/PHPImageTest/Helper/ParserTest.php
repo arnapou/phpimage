@@ -13,7 +13,6 @@ namespace Arnapou\PHPImageTest\Helper;
 
 use Arnapou\PHPImage\Exception\InvalidPositionException;
 use Arnapou\PHPImage\Exception\InvalidRelativeValueException;
-use Arnapou\PHPImage\Helper\HelperTrait;
 use Arnapou\PHPImageTest\TestCase;
 
 /**
@@ -21,8 +20,6 @@ use Arnapou\PHPImageTest\TestCase;
  */
 class ParserTest extends TestCase
 {
-    use HelperTrait;
-
     /**
      * @covers ::parseColor
      */

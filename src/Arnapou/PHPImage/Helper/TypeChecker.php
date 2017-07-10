@@ -12,6 +12,7 @@ namespace Arnapou\PHPImage\Helper;
 
 use Arnapou\PHPImage\Component\Color;
 use Arnapou\PHPImage\Component\Point;
+use Arnapou\PHPImage\Component\Position;
 use Arnapou\PHPImage\Component\Size;
 use Arnapou\PHPImage\Exception\InvalidAlphaException;
 use Arnapou\PHPImage\Exception\InvalidFloatException;
@@ -62,6 +63,29 @@ class TypeChecker
             $this->checkInteger($h, 0, $maxh);
         }
         return $point;
+    }
+
+    /**
+     * @param mixed    $value
+     * @param int      $x
+     * @param int      $y
+     * @param int|null $maxx
+     * @param int|null $maxy
+     * @param bool     $strict
+     * @return Position
+     */
+    public function checkPosition($value, & $x, &$y, $maxx = null, $maxy = null, $strict = true)
+    {
+        $position = new Position($value);
+        $posx = $position->getX($maxx);
+        $posy = $position->getY($maxy);
+        if ($strict) {
+            $this->checkInteger($posx, 0, $maxx);
+            $this->checkInteger($posy, 0, $maxy);
+        }
+        $x -= $posx;
+        $y -= $posy;
+        return $position;
     }
 
     /**

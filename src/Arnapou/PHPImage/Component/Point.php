@@ -99,6 +99,7 @@ class Point
                 $this->setPoint((string)$point);
             } else {
                 if (!is_array($point)) {
+                    $point = \str_replace([',', ';'], ' ', $point);
                     $point = \preg_replace('!\s+!s', ' ', trim($point)); // sanitize spaces
                     $point = explode(' ', $point);
                 }
@@ -109,6 +110,16 @@ class Point
                 $this->setY($point[1]);
             }
         }
+    }
+
+    /**
+     * @param null $maxX
+     * @param null $maxY
+     * @return array
+     */
+    public function toArray($maxX = null, $maxY = null)
+    {
+        return [$this->getX($maxX), $this->getY($maxY)];
     }
 
     /**

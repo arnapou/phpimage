@@ -11,57 +11,75 @@
 
 namespace Arnapou\PHPImageTest;
 
+use Arnapou\PHPImage\Helper\HelperTrait;
+use Arnapou\PHPImage\Image;
+
 class TestCase extends \PHPUnit\Framework\TestCase
 {
+    use HelperTrait;
+    /**
+     * @var string
+     */
+    private $testedImagePathPrefix = null;
 
-    public function assertImageIdentical($image, $name)
+    /**
+     * @return string
+     */
+    public function getPathImages()
     {
-        $filename = __DIR__ . '/../../images/tested/' . $name . '.png';
-        if (!\is_file($filename)) {
-            \imagepng($image, $filename);
-            \imagedestroy($image);
-            $this->assertThat(IsImageIdentical::IDENTICAL, new IsImageIdentical(), $name);
-            return true;
-        }
-        $image2 = \imagecreatefrompng($filename);
+        return __DIR__ . '/../../images';
+    }
 
-        $w1 = \imagesx($image);
-        $h1 = \imagesy($image);
-        $w2 = \imagesx($image2);
-        $h2 = \imagesy($image2);
-        if ($w1 !== $w2 || $h1 !== $h2) {
-            \imagedestroy($image);
-            \imagedestroy($image2);
-            $this->assertThat(IsImageIdentical::DIFFERENT, new IsImageIdentical(), $name);
-            return false;
-        }
-        for ($y = 0; $y < $h1; $y++) {
-            for ($x = 0; $x < $w1; $x++) {
-
-                $val1 = \imagecolorat($image, $x, $y);
-                $R1 = ($val1 >> 16) & 0xFF;
-                $G1 = ($val1 >> 8) & 0xFF;
-                $B1 = $val1 & 0xFF;
-                $A1 = $val1 >> 24;
-
-                $val2 = \imagecolorat($image2, $x, $y);
-                $R2 = ($val2 >> 16) & 0xFF;
-                $G2 = ($val2 >> 8) & 0xFF;
-                $B2 = $val2 & 0xFF;
-                $A2 = $val2 >> 24;
-
-                if ($R1 !== $R2 || $G1 !== $G2 || $B1 !== $B2 || $A1 !== $A2) {
-                    \imagedestroy($image);
-                    \imagedestroy($image2);
-                    $this->assertThat(IsImageIdentical::DIFFERENT, new IsImageIdentical(), $name);
-                    return false;
-                }
-
+    /**
+     * @param string $name
+     * @return string
+     */
+    public function getPathTestedImage($name)
+    {
+        if (null === $this->testedImagePathPrefix) {
+            $this->testedImagePathPrefix = '';
+            $currentClass = \get_class($this);
+            if (\strpos($currentClass, __NAMESPACE__) === 0) {
+                $prefix = \substr($currentClass, \strlen(__NAMESPACE__) + 1);
+                $prefix = \str_replace("\\", ".", $prefix);
+                $this->testedImagePathPrefix = $prefix . '.';
             }
         }
-        \imagedestroy($image);
-        \imagedestroy($image2);
-        $this->assertThat(IsImageIdentical::IDENTICAL, new IsImageIdentical(), $name);
+
+        $path = $this->getPathImages() . '/tested';
+        return $path . '/' . $this->testedImagePathPrefix . $name . '.png';
+    }
+
+    /**
+     * @param resource $image
+     * @param string   $name
+     * @return bool
+     */
+    public function assertImageIdentical($image, $name)
+    {
+        if ($image instanceof Image) {
+            $image = $image->getResource();
+        }
+
+        $image2 = null;
+        $filename = $this->getPathTestedImage($name);
+        if (!\is_file($filename)) {
+            \imagepng($image, $filename); // generate the file at the first run supposing it is valid
+            $identical = true;
+            \imagedestroy($image);
+        } else {
+            $image2 = \imagecreatefrompng($filename);
+            $identical = $this->gd()->areImagesIdentical($image, $image2);
+            \imagedestroy($image);
+            \imagedestroy($image2);
+        }
+
+        // asserts
+        if ($identical) {
+            $this->assertThat(IsImageIdentical::IDENTICAL, new IsImageIdentical(), $name);
+        } else {
+            $this->assertThat(IsImageIdentical::DIFFERENT, new IsImageIdentical(), $name);
+        }
     }
 
 }

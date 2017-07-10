@@ -31,7 +31,7 @@ class RelativeValue
     public function __construct($value = null)
     {
         if ($value) {
-            $this->setValue($value);
+            $this->set($value);
         }
     }
 

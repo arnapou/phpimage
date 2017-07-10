@@ -99,6 +99,7 @@ class Size
                 $this->setSize((string)$size);
             } else {
                 if (!is_array($size)) {
+                    $size = \str_replace([',', ';'], ' ', $size);
                     $size = \preg_replace('!\s+!s', ' ', trim($size)); // sanitize spaces
                     $size = explode(' ', $size);
                 }
@@ -109,6 +110,16 @@ class Size
                 $this->setH($size[1]);
             }
         }
+    }
+
+    /**
+     * @param null $maxW
+     * @param null $maxH
+     * @return array
+     */
+    public function toArray($maxW = null, $maxH = null)
+    {
+        return [$this->getW($maxW), $this->getH($maxH)];
     }
 
     /**

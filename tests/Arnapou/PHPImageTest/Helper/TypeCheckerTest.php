@@ -16,9 +16,9 @@ use Arnapou\PHPImage\Exception\InvalidFloatException;
 use Arnapou\PHPImage\Exception\InvalidImageResourceException;
 use Arnapou\PHPImage\Exception\InvalidIntegerException;
 use Arnapou\PHPImage\Exception\InvalidPointException;
+use Arnapou\PHPImage\Exception\InvalidPositionException;
 use Arnapou\PHPImage\Exception\InvalidSizeException;
 use Arnapou\PHPImage\Exception\OutOfBoundsException;
-use Arnapou\PHPImage\Helper\HelperTrait;
 use Arnapou\PHPImage\Image;
 use Arnapou\PHPImageTest\TestCase;
 
@@ -27,7 +27,6 @@ use Arnapou\PHPImageTest\TestCase;
  */
 class TypeCheckerTest extends TestCase
 {
-    use HelperTrait;
 
     /**
      * @covers ::checkSize
@@ -120,6 +119,55 @@ class TypeCheckerTest extends TestCase
         $this->type()->checkPoint('  150%  100  ', $w, $h, 150, 200, false);
         $this->assertEquals(225, $w);
         $this->assertEquals(100, $h);
+    }
+
+    /**
+     * @covers ::checkPosition
+     */
+    public function testPositionInvalid()
+    {
+        $this->expectException(InvalidPositionException::class);
+        $this->type()->checkPosition(['40%', '50%', '30%'], $w, $h);
+    }
+
+    /**
+     * @covers ::checkPosition
+     */
+    public function testPositionOutOfBound()
+    {
+        $this->expectException(OutOfBoundsException::class);
+        $this->type()->checkPosition('100% 200%', $w, $h, null, 199);
+    }
+
+    /**
+     * @covers ::checkPosition
+     */
+    public function testPositionValid()
+    {
+
+        // percent position
+        $x = 0; $y = 0;
+        $this->type()->checkPosition('  80%  60%  ', $x, $y);
+        $this->assertEquals(-80, $x);
+        $this->assertEquals(-60, $y);
+
+        // named point position
+        $x = 0; $y = 0;
+        $this->type()->checkPosition('  center  bottom  ', $x, $y, 150, 200);
+        $this->assertEquals(-75, $x);
+        $this->assertEquals(-200, $y);
+
+        // percent size with max size
+        $x = 0; $y = 0;
+        $this->type()->checkPosition('  80%  60%  ', $x, $y, 150, 200);
+        $this->assertEquals(-120, $x);
+        $this->assertEquals(-120, $y);
+
+        // percent mixed with integer and no strict check of bounds
+        $x = 0; $y = 0;
+        $this->type()->checkPosition('  150%  100%  ', $x, $y, 150, 200, false);
+        $this->assertEquals(-225, $x);
+        $this->assertEquals(-200, $y);
     }
 
     /**

@@ -30,6 +30,15 @@ class GDTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         $this->gd()->createImage(10, 10, 'invalid_color');
     }
+    /**
+     * @covers ::colorAllocate
+     */
+    public function testColorAllocateInvalid()
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $noImage = null;
+        $this->gd()->colorAllocate($noImage, [1, 2, 3, 4, 5]);
+    }
 
     /**
      * @covers ::createImage
@@ -81,7 +90,6 @@ class GDTest extends TestCase
 
     /**
      * @covers ::realCopy
-     * @covers ::setPixel
      */
     public function testRealCopy()
     {
@@ -92,11 +100,11 @@ class GDTest extends TestCase
 
                 \imagealphablending($image1, false);
                 \imagealphablending($image2, false);
-                $this->gd()->setPixel($image1, 2, 2, [0, 0, 0, 0]);
-                $this->gd()->setPixel($image2, 0, 0, [0, 0, 0, 0]);
+                $this->gd()->setPixel($image1, 2, 2, [0, 0, 0, 5]);
+                $this->gd()->setPixel($image2, 0, 0, [0, 0, 0, 5]);
 
-                $this->gd()->setPixel($image1, 6, 6, [0, 0, 0, 110]);
-                $this->gd()->setPixel($image2, 4, 4, [0, 0, 0, 110]);
+                $this->gd()->setPixel($image1, 6, 6, [0, 0, 0, 120]);
+                $this->gd()->setPixel($image2, 4, 4, [0, 0, 0, 120]);
                 \imagealphablending($image1, true);
                 \imagealphablending($image2, true);
 
@@ -117,6 +125,40 @@ class GDTest extends TestCase
             $image = $factory();
             $this->assertImageIdentical($image, $name);
         }
+    }
+
+    /**
+     * @covers ::getPixel
+     * @covers ::setPixel
+     */
+    public function testGetSetPixel()
+    {
+        $image = $this->gd()->createImage(10, 10);
+        $this->gd()->setPixel($image, 5, 5, [10, 20, 30, 40]);
+
+        $this->assertEquals([10, 20, 30, 40], $this->gd()->getPixel($image, 5, 5));
+    }
+
+    /**
+     * @covers ::areImagesIdentical
+     */
+    public function testImagesIdentical()
+    {
+        $image = $this->gd()->createImage(10, 10);
+        for ($i = 0; $i < 10; $i++) {
+            $x = \mt_rand(0, 9);
+            $y = \mt_rand(0, 9);
+            $color = [\mt_rand(0, 255), \mt_rand(0, 255), \mt_rand(0, 255), \mt_rand(0, 127)];
+            $this->gd()->setPixel($image, $x, $y, $color);
+        }
+
+        $this->assertTrue($this->gd()->areImagesIdentical($image, $image));
+
+        $image2 = $this->gd()->createImage(10, 10);
+        $this->assertFalse($this->gd()->areImagesIdentical($image, $image2));
+
+        $image3 = $this->gd()->createImage(20, 20);
+        $this->assertFalse($this->gd()->areImagesIdentical($image, $image3));
     }
 
 }

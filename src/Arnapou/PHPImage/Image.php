@@ -50,18 +50,18 @@ class Image
 
     /**
      * Image constructor.
-     * @param int        $width
-     * @param int        $height
-     * @param Color|null $backgroundColor
+     * @param int  $width
+     * @param int  $height
+     * @param null $backgroundColor
      */
-    public function __construct($width, $height, Color $backgroundColor = null)
+    public function __construct($width, $height, $backgroundColor = null)
     {
         $this->type()->checkInteger($width, 1);
         $this->type()->checkInteger($height, 1);
         $this->width = $width;
         $this->height = $height;
         if ($backgroundColor) {
-            $this->backgroundColor = $backgroundColor;
+            $this->backgroundColor = new Color($backgroundColor);
         } else {
             $this->backgroundColor = new Color([255, 255, 255, 0]); // white full transparent
         }
@@ -115,13 +115,26 @@ class Image
         $this->img = $this->gd()->createImage($this->width, $this->height, $this->backgroundColor->toArray());
     }
 
+    /**
+     * @param resource $source
+     * @param null     $dstXY
+     * @param null     $srcXY
+     * @param null     $srcWH
+     * @param null     $srcPos
+     * @param bool     $realCopy
+     * @param null     $forcedAlpha
+     */
     public function copy($source, $dstXY = null, $srcXY = null, $srcWH = null,
-                         $dstPos = null, $realCopy = false, $forcedAlpha = null)
+                         $srcPos = null, $realCopy = false, $forcedAlpha = null)
     {
-        $this->type()->checkResource($source);
+        $source = $this->type()->checkResource($source);
+        $sourceWidth = \imagesx($source);
+        $sourceHeight = \imagesy($source);
+
         $this->type()->checkPoint($dstXY, $dstx, $dsty, $this->width - 1, $this->height - 1);
-        $this->type()->checkPoint($srcXY, $srcx, $srcy, \imagesx($source), \imagesy($source));
-        $this->type()->checkSize($srcWH, $srcw, $srch, \imagesx($source), \imagesy($source));
+        $this->type()->checkPoint($srcXY, $srcx, $srcy, $sourceWidth, $sourceHeight);
+        $this->type()->checkSize($srcWH, $srcw, $srch, $sourceWidth, $sourceHeight);
+        $this->type()->checkPosition($srcPos, $dstx, $dsty, $srcw, $srch);
 
         if ($forcedAlpha !== null) {
             $this->type()->checkAlpha($forcedAlpha);
@@ -133,35 +146,10 @@ class Image
         if ($realCopy) {
             $this->gd()->realCopy($this->img, $source, $dstx, $dsty, $srcx, $srcy, $srcw, $srch, $transparency);
         } elseif ($transparency !== null) {
-            imagecopymerge($this->img, $source, $dstx, $dsty, $srcx, $srcy, $srcw, $srch, floor(100 * $transparency / 127));
+            \imagecopymerge($this->img, $source, $dstx, $dsty, $srcx, $srcy, $srcw, $srch, round(100 * $transparency / 127));
         } else {
-            imagecopy($this->img, $source, $dstx, $dsty, $srcx, $srcy, $srcw, $srch);
+            \imagecopy($this->img, $source, $dstx, $dsty, $srcx, $srcy, $srcw, $srch);
         }
-//
-//        $srcimg = PHPImageTools::getimageresource($src);
-//        PHPImageTools::checkresource('Source image', $srcimg);
-//        $srcw = $srcw == 0 ? imagesx($srcimg) : $srcw;
-//        $srch = $srch == 0 ? imagesy($srcimg) : $srch;
-//        PHPImageTools::checksize('Destination X', $dstx, $this->width);
-//        PHPImageTools::checksize('Destination Y', $dsty, $this->height);
-//        PHPImageTools::checksize('Source X', $srcx, imagesx($srcimg));
-//        PHPImageTools::checksize('Source X', $srcy, imagesy($srcimg));
-//        PHPImageTools::checksize('Source Width', $srcw, imagesx($srcimg));
-//        PHPImageTools::checksize('Source Height', $srch, imagesy($srcimg));
-//        PHPImageTools::checksize('Alpha', $alpha, 127);
-//        PHPImageTools::checkinteger('Alpha', $alpha, -1, 127);
-//        PHPImageTools::checkposition('Destination position', $dstpos, $dstx, $dsty, $srcw, $srch);
-//        PHPImageTools::checkposition('Source position', $srcpos, $srcx, $srcy, $srcw, $srch);
-//
-//        if ($this->realcopy) {
-//            $this->realcopy($srcimg, $dstx, $dsty, $srcx, $srcy, $srcw, $srch, $alpha);
-//        } elseif ($alpha < 127) {
-//            if ($alpha < 0) {
-//                imagecopy($this->img, $srcimg, $dstx, $dsty, $srcx, $srcy, $srcw, $srch);
-//            } else {
-//                imagecopymerge($this->img, $srcimg, $dstx, $dsty, $srcx, $srcy, $srcw, $srch, floor(100 * (127 - $alpha) / 127));
-//            }
-//        }
     }
 
     /**
@@ -182,6 +170,17 @@ class Image
     {
         $this->type()->checkPoint($point, $x, $y, $this->width - 1, $this->height - 1);
         \imagesetpixel($this->img, $x, $y, $this->gdColor($color));
+    }
+
+    /**
+     * @param $point
+     * @return Color $color
+     */
+    public function getPixel($point)
+    {
+        $this->type()->checkPoint($point, $x, $y, $this->width - 1, $this->height - 1);
+        $RGBA = $this->gd()->getPixel($this->img, $x, $y);
+        return new Color($RGBA);
     }
 
     /**
@@ -246,6 +245,7 @@ class Image
         }
         $image = new static(\imagesx($tmp), \imagesy($tmp));
         $image->copy($tmp);
+        \imagedestroy($tmp);
         return $image;
     }
 

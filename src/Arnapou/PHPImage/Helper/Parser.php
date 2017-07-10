@@ -77,13 +77,13 @@ class Parser
         $isPercent = false;
         if (is_numeric($value)) {
             $value = floatval($value);
-        } elseif (preg_match('/^\s*([0-9]+)\s*(px)?\s*$/si', $value, $m)) {
-            // pixel integer pattern
-            $value = floatval($m[1]);
         } elseif (preg_match('/^\s*([0-9]+(\.[0-9]+)?)%\s*$/si', $value, $m)) {
             // percent pattern
             $value = floatval($m[1]);
             $isPercent = true;
+        } elseif (preg_match('/^\s*([0-9]+)\s*(px)?\s*$/si', $value, $m)) {
+            // pixel integer pattern
+            $value = floatval($m[1]);
         } elseif (stripos($value, 'center') !== false) {
             $value = 50;
             $isPercent = true;
@@ -109,7 +109,7 @@ class Parser
         if (\is_array($value)) {
             $value = \implode(' ', $value);
         }
-        $value = trim((string)$value);
+        $value = \str_replace([',', ';'], ' ', trim((string)$value));
         // sanitize
         if (stripos($value, 'center') !== false) {
             $value = \str_ireplace('center', '50%', $value);

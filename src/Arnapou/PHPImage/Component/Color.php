@@ -10,14 +10,15 @@
 
 namespace Arnapou\PHPImage\Component;
 
+use Arnapou\PHPImage\Helper\GD;
 use Arnapou\PHPImage\Helper\HelperTrait;
 
 class Color
 {
 
     use HelperTrait;
-    const MAX_ALPHA = 127;
-    const MAX_RGB = 255;
+    const MAX_ALPHA = GD::MAX_ALPHA;
+    const MAX_RGB = GD::MAX_RGB;
     /**
      * @var array
      */
@@ -95,7 +96,7 @@ class Color
     /**
      * @return int
      */
-    public function getGreen()
+    public function getRed()
     {
         return $this->RGBA[0];
     }
@@ -103,7 +104,7 @@ class Color
     /**
      * @return int
      */
-    public function getRed()
+    public function getGreen()
     {
         return $this->RGBA[1];
     }
@@ -159,7 +160,7 @@ class Color
             $i = 0;
             foreach ($color as $val) {
                 $this->RGBA[$i] = $val;
-                if (++$i >= 3) {
+                if (++$i > 3) {
                     break;
                 }
             }
@@ -193,6 +194,6 @@ class Color
      */
     public function __toString()
     {
-        return implode(',', $this->RGBA);
+        return implode(' ', $this->RGBA);
     }
 }

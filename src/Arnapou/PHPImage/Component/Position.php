@@ -10,7 +10,7 @@
 
 namespace Arnapou\PHPImage\Component;
 
-use Arnapou\PHPImage\Exception\InvalidPointException;
+use Arnapou\PHPImage\Exception\InvalidPositionException;
 use Arnapou\PHPImage\Helper\HelperTrait;
 
 class Position
@@ -26,15 +26,15 @@ class Position
     protected $y;
 
     /**
-     * Point constructor.
-     * @param mixed $point
+     * Position constructor.
+     * @param mixed $position
      */
-    public function __construct($point = null)
+    public function __construct($position = null)
     {
-        $this->x = new RelativeValue();
-        $this->y = new RelativeValue();
-        if ($point) {
-            $this->setPoint($point);
+        $this->x = new RelativeValue('0%'); // in order to force percent
+        $this->y = new RelativeValue('0%'); // in order to force percent
+        if ($position) {
+            $this->setPosition($position);
         }
     }
 
@@ -49,10 +49,14 @@ class Position
 
     /**
      * @param int $x
+     * @throws InvalidPositionException
      */
     public function setX($x)
     {
         $this->x->set($x);
+        if (!$this->x->isPercent()) {
+            throw new InvalidPositionException();
+        }
     }
 
     /**
@@ -66,49 +70,48 @@ class Position
 
     /**
      * @param int $y
+     * @throws InvalidPositionException
      */
     public function setY($y)
     {
         $this->y->set($y);
+        if (!$this->y->isPercent()) {
+            throw new InvalidPositionException();
+        }
     }
 
     /**
-     * @return bool
+     * @param string $position
+     * @throws InvalidPositionException
      */
-    public function isPercentX()
+    public function setPosition($position)
     {
-        return $this->x->isPercent();
-    }
-
-    /**
-     * @return bool
-     */
-    public function isPercentY()
-    {
-        return $this->y->isPercent();
-    }
-
-    /**
-     * @param string $point
-     * @throws InvalidPointException
-     */
-    public function setPoint($point)
-    {
-        if ($point !== null) {
-            if ($point instanceof Point) {
-                $this->setPoint((string)$point);
+        if ($position !== null) {
+            if ($position instanceof Position) {
+                $this->setPosition((string)$position);
             } else {
-                if (!is_array($point)) {
-                    $point = \preg_replace('!\s+!s', ' ', trim($point)); // sanitize spaces
-                    $point = explode(' ', $point);
+                if (\is_array($position)) {
+                    if (count($position) != 2) {
+                        throw new InvalidPositionException();
+                    }
+                    $position = \implode(' ', $position);
                 }
-                if (count($point) != 2 || !isset($point[0], $point[1])) {
-                    throw new InvalidPointException();
-                }
-                $this->setX($point[0]);
-                $this->setY($point[1]);
+                $position = $this->parser()->parsePosition((string)$position);
+
+                $this->setX($position[0] . '%');
+                $this->setY($position[1] . '%');
             }
         }
+    }
+
+    /**
+     * @param null $maxX
+     * @param null $maxY
+     * @return array
+     */
+    public function toArray($maxX = null, $maxY = null)
+    {
+        return [$this->getX($maxX), $this->getY($maxY)];
     }
 
     /**
