@@ -11,10 +11,11 @@
 
 namespace Arnapou\PHPImageTest;
 
+use Arnapou\PHPImage\Exception\DestroyedImageException;
 use Arnapou\PHPImage\Exception\FileNotFoundException;
+use Arnapou\PHPImage\Exception\InvalidFileTypeException;
 use Arnapou\PHPImage\Exception\UnknownFileTypeException;
 use Arnapou\PHPImage\Image;
-use Arnapou\PHPImageTest\TestCase;
 
 /**
  * @coversDefaultClass Arnapou\PHPImage\Image
@@ -79,12 +80,55 @@ class ImageTest extends TestCase
     }
 
     /**
+     * @covers ::getBackgroundColor
+     * @covers ::setBackgroundColor
+     */
+    public function testBackgroundColor()
+    {
+        $color = [100, 150, 200, 50];
+        $image = new Image(10, 10, $color);
+        $this->assertEquals($color, $image->getBackgroundColor()->toArray());
+    }
+
+    /**
+     * @covers ::getFileType
+     * @covers ::setFileType
+     */
+    public function testFileType()
+    {
+        $image = new Image(10, 10);
+        $this->assertEquals(Image::FILETYPE_PNG, $image->getFileType());
+    }
+
+    /**
+     * @covers ::setFileType
+     */
+    public function testFileTypeInvalid()
+    {
+        $this->expectException(InvalidFileTypeException::class);
+        $image = new Image(10, 10);
+        $image->setFileType('xxx');
+    }
+
+    /**
+     * @covers ::getClone
+     */
+    public function testClone()
+    {
+        $filename = $this->getPathImages() . '/assets/php.gif';
+        $image = Image::createFromFile($filename);
+        $clone = $image->getClone();
+        $this->assertTrue($this->gd()->areImagesIdentical($image->getResource(), $clone->getResource()), 'clone test');
+    }
+
+    /**
      * @covers ::clear
      * @covers ::getPixel
      * @covers ::setPixel
      * @covers ::gdColor
      * @covers ::clear
      * @covers ::fill
+     * @covers ::checkNotDestroyed
      */
     public function testPixel()
     {
@@ -102,6 +146,8 @@ class ImageTest extends TestCase
 
     /**
      * @covers ::__destruct
+     * @covers ::destroy
+     * @covers ::isDestroyed
      * @covers ::getResource
      */
     public function testDestructor()
@@ -110,6 +156,20 @@ class ImageTest extends TestCase
         $image->__destruct();
 
         $this->assertEquals(null, $image->getResource());
+        $this->assertEquals(true, $image->isDestroyed());
+    }
+
+    /**
+     * @covers ::checkNotDestroyed
+     * @covers ::destroy
+     */
+    public function testCheckDestroyed()
+    {
+        $this->expectException(DestroyedImageException::class);
+
+        $image = new Image(10, 20);
+        $image->destroy();
+        $image->getPixel([0, 0]);
     }
 
     /**

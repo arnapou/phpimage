@@ -11,7 +11,9 @@
 namespace Arnapou\PHPImage;
 
 use Arnapou\PHPImage\Component\Color;
+use Arnapou\PHPImage\Exception\DestroyedImageException;
 use Arnapou\PHPImage\Exception\FileNotFoundException;
+use Arnapou\PHPImage\Exception\InvalidFileTypeException;
 use Arnapou\PHPImage\Exception\UnknownFileTypeException;
 use Arnapou\PHPImage\Helper\HelperTrait;
 
@@ -46,25 +48,23 @@ class Image
     /**
      * @var string
      */
-    protected $fileType = self::FILETYPE_PNG;
+    protected $fileType;
 
     /**
      * Image constructor.
-     * @param int  $width
-     * @param int  $height
-     * @param null $backgroundColor
+     * @param int    $width
+     * @param int    $height
+     * @param null   $backgroundColor
+     * @param string $fileType
      */
-    public function __construct($width, $height, $backgroundColor = null)
+    public function __construct($width, $height, $backgroundColor = null, $fileType = self::FILETYPE_PNG)
     {
         $this->type()->checkInteger($width, 1);
         $this->type()->checkInteger($height, 1);
         $this->width = $width;
         $this->height = $height;
-        if ($backgroundColor) {
-            $this->backgroundColor = new Color($backgroundColor);
-        } else {
-            $this->backgroundColor = new Color([255, 255, 255, 0]); // white full transparent
-        }
+        $this->setBackgroundColor($backgroundColor ?: new Color([255, 255, 255, 0]));
+        $this->setFileType($fileType);
         $this->clear();
     }
 
@@ -73,11 +73,57 @@ class Image
      */
     public function __destruct()
     {
-        if ($this->img && \is_resource($this->img)) {
-            \imagedestroy($this->img);
-        }
-        $this->img = null;
+        $this->destroy();
     }
+
+    /**
+     * @return Image
+     */
+    public function getClone()
+    {
+        $clone = new Image($this->getWidth(), $this->getHeight(), $this->getBackgroundColor());
+        $clone->setFileType($this->getFileType());
+        $clone->copy($this);
+        return $clone;
+    }
+
+    /**
+     * @return Color
+     */
+    public function getBackgroundColor()
+    {
+        return $this->backgroundColor;
+    }
+
+    /**
+     * @param Color $color
+     */
+    public function setBackgroundColor($color)
+    {
+        $this->backgroundColor = new Color($color);
+    }
+
+    /**
+     * @param string $fileType
+     * @throws InvalidFileTypeException
+     */
+    public function setFileType($fileType)
+    {
+        if (!\in_array($fileType, [self::FILETYPE_GIF, self::FILETYPE_JPG, self::FILETYPE_PNG])) {
+            throw new InvalidFileTypeException("Type $fileType not valid.");
+        }
+        $this->fileType = $fileType;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getFileType()
+    {
+        return $this->fileType;
+    }
+
 
     /**
      * @return resource
@@ -104,13 +150,41 @@ class Image
     }
 
     /**
-     *
+     * Destroy the image to free memory.
+     * Note that any drawing method after that will generate a php error : that's normal !
      */
-    public function clear()
+    public function destroy()
     {
         if ($this->img && \is_resource($this->img)) {
             \imagedestroy($this->img);
         }
+        $this->img = null;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDestroyed()
+    {
+        return $this->img === null;
+    }
+
+    /**
+     * @throws DestroyedImageException
+     */
+    protected function checkNotDestroyed()
+    {
+        if ($this->isDestroyed()) {
+            throw new DestroyedImageException("The image was already destroyed.");
+        }
+    }
+
+    /**
+     *
+     */
+    public function clear()
+    {
+        $this->destroy();
         $this->gdAllocatedColors = [];
         $this->img = $this->gd()->createImage($this->width, $this->height, $this->backgroundColor->toArray());
     }
@@ -127,6 +201,7 @@ class Image
     public function copy($source, $dstXY = null, $srcXY = null, $srcWH = null,
                          $srcPos = null, $realCopy = false, $forcedAlpha = null)
     {
+        $this->checkNotDestroyed();
         $source = $this->type()->checkResource($source);
         $sourceWidth = \imagesx($source);
         $sourceHeight = \imagesy($source);
@@ -158,6 +233,7 @@ class Image
      */
     public function fill($point, $color)
     {
+        $this->checkNotDestroyed();
         $this->type()->checkPoint($point, $x, $y, $this->width - 1, $this->height - 1);
         \imagefill($this->img, $x, $y, $this->gdColor($color));
     }
@@ -168,16 +244,21 @@ class Image
      */
     public function setPixel($point, $color)
     {
+        $this->checkNotDestroyed();
         $this->type()->checkPoint($point, $x, $y, $this->width - 1, $this->height - 1);
         \imagesetpixel($this->img, $x, $y, $this->gdColor($color));
     }
 
     /**
+     * Use this method with caution : it not a fast method to get a lots pixel colors.
+     * Look at other ways to get what you want if you need performance.
+     *
      * @param $point
      * @return Color $color
      */
     public function getPixel($point)
     {
+        $this->checkNotDestroyed();
         $this->type()->checkPoint($point, $x, $y, $this->width - 1, $this->height - 1);
         $RGBA = $this->gd()->getPixel($this->img, $x, $y);
         return new Color($RGBA);
