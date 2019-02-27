@@ -1,6 +1,7 @@
 {
     "name": "arnapou/phpimage",
     "description": "Arnapou PHPImage",
+    "license": "MIT",
     "authors": [
         {
             "name": "Arnaud Buathier",
@@ -8,18 +9,19 @@
             "homepage": "http://arnapou.net"
         }
     ],
-    "require": {
-        "php": ">=5.5",
-        "ext-gd": "*"
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.x-dev"
+        }
     },
-    "require-dev": {
+    "require": {
         "php": ">=7.0",
-        "ext-gd": "*",
-        "phpunit/phpunit": "6.2.3"
+        "ext-gd": "*"
     },
     "autoload": {
         "psr-4": {
-            "Arnapou\\PHPImage\\": "src/Arnapou/PHPImage/"
+            "Arnapou\\PHPImage\\": "src/"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }

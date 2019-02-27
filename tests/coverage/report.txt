@@ -1,30 +1,30 @@
 
 
 Code Coverage Report:       
-  2017-07-10 18:12:08       
+  2019-02-28 00:17:48       
                             
  Summary:                   
-  Classes: 66.67% (10/15)   
-  Methods: 41.67% (85/204)  
-  Lines:   11.35% (439/3867)
+  Classes: 100.00% (10/10)  
+  Methods: 100.00% (93/93)  
+  Lines:   100.00% (459/459)
 
-\Arnapou\PHPImage::Image
-  Methods: 100.00% (13/13)   Lines: 100.00% ( 77/ 77)
-\Arnapou\PHPImage\Component::Color
+\Arnapou\PHPImage::Arnapou\PHPImage\Image
+  Methods: 100.00% (21/21)   Lines: 100.00% ( 97/ 97)
+\Arnapou\PHPImage\Component::Arnapou\PHPImage\Component\Color
   Methods: 100.00% (18/18)   Lines: 100.00% ( 48/ 48)
-\Arnapou\PHPImage\Component::Point
+\Arnapou\PHPImage\Component::Arnapou\PHPImage\Component\Point
   Methods: 100.00% (10/10)   Lines: 100.00% ( 27/ 27)
-\Arnapou\PHPImage\Component::Position
+\Arnapou\PHPImage\Component::Arnapou\PHPImage\Component\Position
   Methods: 100.00% ( 8/ 8)   Lines: 100.00% ( 28/ 28)
-\Arnapou\PHPImage\Component::RelativeValue
+\Arnapou\PHPImage\Component::Arnapou\PHPImage\Component\RelativeValue
   Methods: 100.00% ( 5/ 5)   Lines: 100.00% ( 15/ 15)
-\Arnapou\PHPImage\Component::Size
+\Arnapou\PHPImage\Component::Arnapou\PHPImage\Component\Size
   Methods: 100.00% (10/10)   Lines: 100.00% ( 27/ 27)
-\Arnapou\PHPImage\Helper::GD
+\Arnapou\PHPImage\Helper::Arnapou\PHPImage\Helper\GD
   Methods: 100.00% ( 7/ 7)   Lines: 100.00% ( 88/ 88)
-\Arnapou\PHPImage\Helper::NamedColors
+\Arnapou\PHPImage\Helper::Arnapou\PHPImage\Helper\NamedColors
   Methods: 100.00% ( 3/ 3)   Lines: 100.00% (  5/  5)
-\Arnapou\PHPImage\Helper::Parser
+\Arnapou\PHPImage\Helper::Arnapou\PHPImage\Helper\Parser
   Methods: 100.00% ( 3/ 3)   Lines: 100.00% ( 64/ 64)
-\Arnapou\PHPImage\Helper::TypeChecker
+\Arnapou\PHPImage\Helper::Arnapou\PHPImage\Helper\TypeChecker
   Methods: 100.00% ( 8/ 8)   Lines: 100.00% ( 60/ 60)
