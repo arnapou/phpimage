@@ -100,8 +100,8 @@ class Size
                 $this->setSize((string)$size);
             } else {
                 if (!\is_array($size)) {
-                    $size = \str_replace([',', ';'], ' ', $size);
-                    $size = \preg_replace('!\s+!s', ' ', trim($size)); // sanitize spaces
+                    $size = str_replace([',', ';'], ' ', $size);
+                    $size = preg_replace('!\s+!s', ' ', trim($size)); // sanitize spaces
                     $size = explode(' ', $size);
                 }
                 if (\count($size) != 2 || !isset($size[0], $size[1])) {

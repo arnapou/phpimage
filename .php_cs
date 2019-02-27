@@ -42,7 +42,7 @@ return PhpCsFixer\Config::create()
         'standardize_not_equals'                => true,
         'ternary_to_null_coalescing'            => true,
         'trailing_comma_in_multiline_array'     => true,
-        'native_function_invocation'            => ['include' => ['@compiler_optimized']],
+        'native_function_invocation'            => ['include' => ['@compiler_optimized'], 'strict'=> true],
         'ordered_imports'                       => ['sort_algorithm' => 'alpha'],
         'single_import_per_statement'           => true,
         'header_comment'                        => ['header' => $header],

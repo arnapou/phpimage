@@ -100,8 +100,8 @@ class Point
                 $this->setPoint((string)$point);
             } else {
                 if (!\is_array($point)) {
-                    $point = \str_replace([',', ';'], ' ', $point);
-                    $point = \preg_replace('!\s+!s', ' ', trim($point)); // sanitize spaces
+                    $point = str_replace([',', ';'], ' ', $point);
+                    $point = preg_replace('!\s+!s', ' ', trim($point)); // sanitize spaces
                     $point = explode(' ', $point);
                 }
                 if (\count($point) != 2 || !isset($point[0], $point[1])) {

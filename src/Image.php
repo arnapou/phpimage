@@ -155,7 +155,7 @@ class Image
     public function destroy()
     {
         if ($this->img && \is_resource($this->img)) {
-            \imagedestroy($this->img);
+            imagedestroy($this->img);
         }
         $this->img = null;
     }
@@ -206,8 +206,8 @@ class Image
     ) {
         $this->checkNotDestroyed();
         $source = $this->type()->checkResource($source);
-        $sourceWidth = \imagesx($source);
-        $sourceHeight = \imagesy($source);
+        $sourceWidth = imagesx($source);
+        $sourceHeight = imagesy($source);
 
         $this->type()->checkPoint($dstXY, $dstx, $dsty, $this->width - 1, $this->height - 1);
         $this->type()->checkPoint($srcXY, $srcx, $srcy, $sourceWidth, $sourceHeight);
@@ -224,9 +224,9 @@ class Image
         if ($realCopy) {
             $this->gd()->realCopy($this->img, $source, $dstx, $dsty, $srcx, $srcy, $srcw, $srch, $transparency);
         } elseif ($transparency !== null) {
-            \imagecopymerge($this->img, $source, $dstx, $dsty, $srcx, $srcy, $srcw, $srch, round(100 * $transparency / 127));
+            imagecopymerge($this->img, $source, $dstx, $dsty, $srcx, $srcy, $srcw, $srch, round(100 * $transparency / 127));
         } else {
-            \imagecopy($this->img, $source, $dstx, $dsty, $srcx, $srcy, $srcw, $srch);
+            imagecopy($this->img, $source, $dstx, $dsty, $srcx, $srcy, $srcw, $srch);
         }
     }
 
@@ -238,7 +238,7 @@ class Image
     {
         $this->checkNotDestroyed();
         $this->type()->checkPoint($point, $x, $y, $this->width - 1, $this->height - 1);
-        \imagefill($this->img, $x, $y, $this->gdColor($color));
+        imagefill($this->img, $x, $y, $this->gdColor($color));
     }
 
     /**
@@ -249,7 +249,7 @@ class Image
     {
         $this->checkNotDestroyed();
         $this->type()->checkPoint($point, $x, $y, $this->width - 1, $this->height - 1);
-        \imagesetpixel($this->img, $x, $y, $this->gdColor($color));
+        imagesetpixel($this->img, $x, $y, $this->gdColor($color));
     }
 
     /**
@@ -282,7 +282,7 @@ class Image
             $green = $color->getGreen();
             $blue = $color->getBlue();
             $alpha = $color->getTransparency();
-            $this->gdAllocatedColors[$key] = \imagecolorallocatealpha($this->img, $red, $green, $blue, $alpha);
+            $this->gdAllocatedColors[$key] = imagecolorallocatealpha($this->img, $red, $green, $blue, $alpha);
         }
         return $this->gdAllocatedColors[$key];
     }
@@ -295,7 +295,7 @@ class Image
      */
     public static function fileTypeFromFilename($filename)
     {
-        $ext = \strtolower(\substr($filename, -4));
+        $ext = strtolower(substr($filename, -4));
         $extensions = [
             '.png' => self::FILETYPE_PNG,
             '.jpg' => self::FILETYPE_JPG,
@@ -314,22 +314,22 @@ class Image
      */
     public static function createFromFile($filename)
     {
-        if (!\is_file($filename)) {
+        if (!is_file($filename)) {
             throw new FileNotFoundException();
         }
         $fileType = self::fileTypeFromFilename($filename);
         if (self::FILETYPE_JPG === $fileType) {
-            $tmp = \imagecreatefromjpeg($filename);
+            $tmp = imagecreatefromjpeg($filename);
         }
         if (self::FILETYPE_GIF === $fileType) {
-            $tmp = \imagecreatefromgif($filename);
+            $tmp = imagecreatefromgif($filename);
         }
         if (self::FILETYPE_PNG === $fileType) {
-            $tmp = \imagecreatefrompng($filename);
+            $tmp = imagecreatefrompng($filename);
         }
-        $image = new static(\imagesx($tmp), \imagesy($tmp));
+        $image = new static(imagesx($tmp), imagesy($tmp));
         $image->copy($tmp);
-        \imagedestroy($tmp);
+        imagedestroy($tmp);
         return $image;
     }
 }

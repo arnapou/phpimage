@@ -98,7 +98,7 @@ class TypeChecker
     {
         if ($value instanceof Image) {
             return $value->getResource();
-        } elseif (\is_resource($value) && \get_resource_type($value) === 'gd') {
+        } elseif (\is_resource($value) && get_resource_type($value) === 'gd') {
             return $value;
         }
         throw new InvalidImageResourceException();

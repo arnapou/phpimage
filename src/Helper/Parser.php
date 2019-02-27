@@ -24,7 +24,7 @@ class Parser
     public function parseColor($value)
     {
         if (\is_array($value)) {
-            $value = \implode(' ', $value);
+            $value = implode(' ', $value);
         }
         $RGBA = [0, 0, 0, Color::MAX_ALPHA];
         $color = strtolower(trim($value));
@@ -107,25 +107,25 @@ class Parser
     public function parsePosition($value)
     {
         if (\is_array($value)) {
-            $value = \implode(' ', $value);
+            $value = implode(' ', $value);
         }
-        $value = \str_replace([',', ';'], ' ', trim((string)$value));
+        $value = str_replace([',', ';'], ' ', trim((string)$value));
         // sanitize
         if (stripos($value, 'center') !== false) {
-            $value = \str_ireplace('center', '50%', $value);
+            $value = str_ireplace('center', '50%', $value);
         }
         if (stripos($value, 'top') !== false) {
-            $value = \str_ireplace('top', '', $value) . ' 0%';
+            $value = str_ireplace('top', '', $value) . ' 0%';
         } elseif (stripos($value, 'bottom') !== false) {
-            $value = \str_ireplace('bottom', '', $value) . ' 100%';
+            $value = str_ireplace('bottom', '', $value) . ' 100%';
         }
         if (stripos($value, 'left') !== false) {
-            $value = '0% ' . \str_ireplace('left', '', $value);
+            $value = '0% ' . str_ireplace('left', '', $value);
         } elseif (stripos($value, 'right') !== false) {
-            $value = '100% ' . \str_ireplace('right', '', $value);
+            $value = '100% ' . str_ireplace('right', '', $value);
         }
         // final check
-        if (\preg_match('!([0-9]+(?:\.[0-9]+)?)%\s+([0-9]+(?:\.[0-9]+)?)%!', $value, $m)) {
+        if (preg_match('!([0-9]+(?:\.[0-9]+)?)%\s+([0-9]+(?:\.[0-9]+)?)%!', $value, $m)) {
             return [\floatval($m[1]), \floatval($m[2])];
         }
         throw new InvalidPositionException($value);

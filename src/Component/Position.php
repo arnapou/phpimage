@@ -95,7 +95,7 @@ class Position
                     if (\count($position) != 2) {
                         throw new InvalidPositionException();
                     }
-                    $position = \implode(' ', $position);
+                    $position = implode(' ', $position);
                 }
                 $position = $this->parser()->parsePosition((string)$position);
 
