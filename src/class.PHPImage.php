@@ -4512,7 +4512,7 @@ class PHPImageTools {
 	 * @param <type> $value
 	 */
 	static function checkresource($paramname, & $value) {
-		if(!is_resource($value)) {
+		if(!is_resource($value) && !$value instanceof GdImage) {
 			throw new PHPImageException("$paramname is not a resource");
 		}
 	}
