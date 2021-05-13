@@ -9,8 +9,9 @@
 		}
 	],
     "require": {
-        "php": ">=5.5"
-    },
+        "php": ">=5.5",
+		"ext-gd": "*"
+	},
     "autoload": {
 		"files": ["src/class.PHPImage.php"]
     }
